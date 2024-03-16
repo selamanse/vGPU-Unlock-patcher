@@ -1,0 +1,2595 @@
+diff --git a/vgpuConfig.xml b/vgpuConfig.xml
+index 3ad55c9..3087875 100644
+--- a/vgpuConfig.xml
++++ b/vgpuConfig.xml
+@@ -257,6 +258,2095 @@
+     <frame_rate_limiter>1</frame_rate_limiter>
+     <license>VPC;QVDWS;VWS;VWSExt</license>
+   </vgpuType>
++  <vgpuType id="12" name="GRID M60-0Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x114C"/>
++    <profileSize>0x20000000</profileSize>
++    <framebuffer>0x1A000000</framebuffer>
++    <fbReservation>0x6000000</fbReservation>
++    <numHeads>2</numHeads>
++    <display width="2560" height="1600"/>
++    <maxPixels>8192000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="15" name="GRID M60-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x114D"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="18" name="GRID M60-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x114E"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="20" name="GRID M60-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x114F"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="22" name="GRID M60-8Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x1150"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="11" name="GRID M60-0B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x1176"/>
++    <profileSize>0x20000000</profileSize>
++    <framebuffer>0x1A000000</framebuffer>
++    <fbReservation>0x6000000</fbReservation>
++    <numHeads>2</numHeads>
++    <display width="2560" height="1600"/>
++    <maxPixels>8192000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="14" name="GRID M60-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x1177"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="17" name="GRID M60-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x117D"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="13" name="GRID M60-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x11AE"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="16" name="GRID M60-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x11AF"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="19" name="GRID M60-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x11B0"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="21" name="GRID M60-8A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x11B1"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="210" name="GRID M60-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x12EC"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="238" name="GRID M60-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x1337"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="29" name="GRID M6-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x117C"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="23" name="GRID M6-0B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x117E"/>
++    <profileSize>0x20000000</profileSize>
++    <framebuffer>0x1A000000</framebuffer>
++    <fbReservation>0x6000000</fbReservation>
++    <numHeads>2</numHeads>
++    <display width="2560" height="1600"/>
++    <maxPixels>8192000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="26" name="GRID M6-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x117F"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="24" name="GRID M6-0Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x1180"/>
++    <profileSize>0x20000000</profileSize>
++    <framebuffer>0x1A000000</framebuffer>
++    <fbReservation>0x6000000</fbReservation>
++    <numHeads>2</numHeads>
++    <display width="2560" height="1600"/>
++    <maxPixels>8192000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="27" name="GRID M6-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x1181"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="30" name="GRID M6-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x1182"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="32" name="GRID M6-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x1183"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="34" name="GRID M6-8Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x1184"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="25" name="GRID M6-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x11AA"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="28" name="GRID M6-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x11AB"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="31" name="GRID M6-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x11AC"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="33" name="GRID M6-8A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x11AD"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="209" name="GRID M6-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x12ED"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="239" name="GRID M6-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x1338"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="154" name="GRID P100C-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x1265"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="144" name="GRID P100C-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x1266"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="145" name="GRID P100C-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x1267"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="146" name="GRID P100C-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x1268"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="147" name="GRID P100C-6Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x1269"/>
++    <profileSize>0x180000000</profileSize>
++    <framebuffer>0x164000000</framebuffer>
++    <fbReservation>0x1C000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="148" name="GRID P100C-12Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x126A"/>
++    <profileSize>0x300000000</profileSize>
++    <framebuffer>0x2CC000000</framebuffer>
++    <fbReservation>0x34000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="149" name="GRID P100C-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x126B"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="150" name="GRID P100C-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x126C"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="151" name="GRID P100C-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x126D"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="152" name="GRID P100C-6A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x126E"/>
++    <profileSize>0x180000000</profileSize>
++    <framebuffer>0x164000000</framebuffer>
++    <fbReservation>0x1C000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="153" name="GRID P100C-12A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x126F"/>
++    <profileSize>0x300000000</profileSize>
++    <framebuffer>0x2CC000000</framebuffer>
++    <fbReservation>0x34000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="161" name="GRID P100C-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x128D"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="212" name="GRID P100C-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x12F4"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="246" name="GRID P100C-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x133F"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="93" name="GRID P100-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1221"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="83" name="GRID P100-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1222"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="84" name="GRID P100-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1223"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="85" name="GRID P100-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1224"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="86" name="GRID P100-8Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1225"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="87" name="GRID P100-16Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1226"/>
++    <profileSize>0x400000000</profileSize>
++    <framebuffer>0x3BC000000</framebuffer>
++    <fbReservation>0x44000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="88" name="GRID P100-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1227"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="89" name="GRID P100-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1228"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="90" name="GRID P100-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x1229"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="91" name="GRID P100-8A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x122A"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="92" name="GRID P100-16A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x122B"/>
++    <profileSize>0x400000000</profileSize>
++    <framebuffer>0x3BC000000</framebuffer>
++    <fbReservation>0x44000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="160" name="GRID P100-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x128C"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="211" name="GRID P100-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x12F2"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="244" name="GRID P100-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x133D"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="104" name="GRID P100X-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x122C"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="94" name="GRID P100X-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x122D"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="95" name="GRID P100X-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x122E"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="96" name="GRID P100X-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x122F"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="97" name="GRID P100X-8Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x1230"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="98" name="GRID P100X-16Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x1231"/>
++    <profileSize>0x400000000</profileSize>
++    <framebuffer>0x3BC000000</framebuffer>
++    <fbReservation>0x44000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++    <nvlinkP2PSupported>1</nvlinkP2PSupported>
++  </vgpuType>
++  <vgpuType id="99" name="GRID P100X-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x1232"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="100" name="GRID P100X-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x1233"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="101" name="GRID P100X-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x1234"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="102" name="GRID P100X-8A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x1235"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="103" name="GRID P100X-16A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x1236"/>
++    <profileSize>0x400000000</profileSize>
++    <framebuffer>0x3BC000000</framebuffer>
++    <fbReservation>0x44000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="159" name="GRID P100X-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x128B"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="213" name="GRID P100X-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x12F3"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="245" name="GRID P100X-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x133E"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="62" name="GRID P40-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11E7"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="46" name="GRID P40-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11E8"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="47" name="GRID P40-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11E9"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="48" name="GRID P40-3Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11EA"/>
++    <profileSize>0xc0000000</profileSize>
++    <framebuffer>0xB0000000</framebuffer>
++    <fbReservation>0x10000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="49" name="GRID P40-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11EB"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="50" name="GRID P40-6Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11EC"/>
++    <profileSize>0x180000000</profileSize>
++    <framebuffer>0x164000000</framebuffer>
++    <fbReservation>0x1C000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="51" name="GRID P40-8Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11ED"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="52" name="GRID P40-12Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11EE"/>
++    <profileSize>0x300000000</profileSize>
++    <framebuffer>0x2CC000000</framebuffer>
++    <fbReservation>0x34000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="53" name="GRID P40-24Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11EF"/>
++    <profileSize>0x600000000</profileSize>
++    <framebuffer>0x59C000000</framebuffer>
++    <fbReservation>0x64000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="54" name="GRID P40-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F0"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="55" name="GRID P40-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F1"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="56" name="GRID P40-3A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F2"/>
++    <profileSize>0xc0000000</profileSize>
++    <framebuffer>0xB0000000</framebuffer>
++    <fbReservation>0x10000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="57" name="GRID P40-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F3"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="58" name="GRID P40-6A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F4"/>
++    <profileSize>0x180000000</profileSize>
++    <framebuffer>0x164000000</framebuffer>
++    <fbReservation>0x1C000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="59" name="GRID P40-8A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F5"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="60" name="GRID P40-12A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F6"/>
++    <profileSize>0x300000000</profileSize>
++    <framebuffer>0x2CC000000</framebuffer>
++    <fbReservation>0x34000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="61" name="GRID P40-24A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x11F7"/>
++    <profileSize>0x600000000</profileSize>
++    <framebuffer>0x59C000000</framebuffer>
++    <fbReservation>0x64000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="156" name="GRID P40-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x1287"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="215" name="GRID P40-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x12EF"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="241" name="GRID P40-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x133A"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="71" name="GRID P4-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1203"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="63" name="GRID P4-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1204"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="64" name="GRID P4-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1205"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="65" name="GRID P4-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1206"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="66" name="GRID P4-8Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1207"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="67" name="GRID P4-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1208"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="68" name="GRID P4-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1209"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="69" name="GRID P4-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x120A"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="70" name="GRID P4-8A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x120B"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="157" name="GRID P4-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x1288"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="214" name="GRID P4-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x12F1"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="243" name="GRID P4-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x133C"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="82" name="GRID P6-1B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11F8"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="72" name="GRID P6-1Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11F9"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="73" name="GRID P6-2Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11FA"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>36864000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="74" name="GRID P6-4Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11FB"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>58982400</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="75" name="GRID P6-8Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11FC"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="76" name="GRID P6-16Q" class="Quadro">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11FD"/>
++    <profileSize>0x400000000</profileSize>
++    <framebuffer>0x3BC000000</framebuffer>
++    <fbReservation>0x44000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="7680" height="4320"/>
++    <maxPixels>66355200</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>1</cudaEnabled>
++    <eccSupported>1</eccSupported>
++    <multiVgpuSupported>1</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="77" name="GRID P6-1A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11FE"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="78" name="GRID P6-2A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x11FF"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="79" name="GRID P6-4A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x1200"/>
++    <profileSize>0x100000000</profileSize>
++    <framebuffer>0xEC000000</framebuffer>
++    <fbReservation>0x14000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="80" name="GRID P6-8A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x1201"/>
++    <profileSize>0x200000000</profileSize>
++    <framebuffer>0x1DC000000</framebuffer>
++    <fbReservation>0x24000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="81" name="GRID P6-16A" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x1202"/>
++    <profileSize>0x400000000</profileSize>
++    <framebuffer>0x3BC000000</framebuffer>
++    <fbReservation>0x44000000</fbReservation>
++    <numHeads>1</numHeads>
++    <display width="1280" height="1024"/>
++    <maxPixels>1310720</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x3c</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VApps</license>
++  </vgpuType>
++  <vgpuType id="158" name="GRID P6-2B" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x1289"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="216" name="GRID P6-2B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x12F0"/>
++    <profileSize>0x80000000</profileSize>
++    <framebuffer>0x74000000</framebuffer>
++    <fbReservation>0xC000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>18432000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
++  <vgpuType id="242" name="GRID P6-1B4" class="NVS">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x133B"/>
++    <profileSize>0x40000000</profileSize>
++    <framebuffer>0x38000000</framebuffer>
++    <fbReservation>0x8000000</fbReservation>
++    <numHeads>4</numHeads>
++    <display width="5120" height="2880"/>
++    <maxPixels>16384000</maxPixels>
++    <mappableVideoSize>0x400000</mappableVideoSize>
++    <frlConfig>0x2d</frlConfig>
++    <cudaEnabled>0</cudaEnabled>
++    <eccSupported>0</eccSupported>
++    <multiVgpuSupported>0</multiVgpuSupported>
++    <encoderCapacity>0x64</encoderCapacity>
++    <bar1Length>0x100</bar1Length>
++    <frame_rate_limiter>1</frame_rate_limiter>
++    <license>VPC;QVDWS;VWS;VWSExt</license>
++  </vgpuType>
+   <vgpuType id="126" name="GRID V100X-1B" class="NVS">
+     <devId vendorId="0x10de" deviceId="0x1DB1" subsystemVendorId="0x10de" subsystemId="0x1259"/>
+     <profileSize>0x40000000</profileSize>
+@@ -9570,6 +11220,494 @@
+       <digest type="signature">82f7d4f1aa23941efc163a9e0853681b1f4b75df750eecc5995bfa5e66a899badaf93f9200e2a4c5621920da2af95c6fe519da15a7d2e337195a3d512732d908afbf766bc1cdb23c578d260d4742ed66dbb808ddadffebbcd0544e8f2bd74b52528bfb978bdb008cd5f7c64e9a317a641a0e2da74a6437487d8818fd69daebc6</digest>
+     </supportedVgpu>
+   </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x13F2" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="12">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">4c3854de2ab3cd9bcba82827206de9c5360c5ad022af7a693857fac25ff529b829c519bc598af854a6c49fc67b53a18431326921b5df110a0aa39efe5d4f84befa2847dc68568aff325417f2e609885cffd0e019cf92b658b0f56d4702344fc1fc7219e6d5e016a906a4716b0a7ab6b0f07beb094168e3d9d14350b417f4a047</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="15">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">9475eac2acd1995a804bf43e8036721296bb4e886f48261ae2ca96b5fbe482fba1587c3f7a3c91f3afd4d4bebe6f05636114578840149b7154d592dc95931f73d5a5028322130a2ce7667016d1ebedb14282936df1df92927e2da74f84e3a36a51c2c3ed6f5bea1f732ff5890bb5902b5ccbc17b19b83e2b4a1975279b1ffec5</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="18">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">3e05520ca0336de1610a90f70528e3f089d0c4946a841db582d57017144c90068d9ab900daaf47b8fffac3c3abd0a89dd68adebfed12acc9b3ad2936e0cd580590c354e4a3a5221eebe1d318fee9026eaa1b2e41d754e4b9518717ac97c647cf38d0fdf47dc0ffbe13a03e482b7ca996bc04d9aac5462a7b9902aefca974efd0</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="20">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">09666592680dba035c71b20556d040455d5e54f4430877387aca16a9783575eb3d43727a2dd01870660bfe610e40882f28900092b454fd0c320f72462bbc34edc39a06ac0b9397fe2fe6be05aca804c91de54436383b5796f465bc1efe8e1d42b6e18e658990b2b425bf1e539eb4e9982e3b769118f6bf7b9d0d28afe48b9c80</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="22">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">a820790425e0e92ca7674d26ec4be4116a085205b19e5b46355c169342a5e9e5ac0af15734c2311970b18f6b59b7a57e9a404bf599e52ddc6cc0514726a485dc7f43740ab9f2b895494ede0b7d2e069b9184a898e394972c200d11714a0437fef50499100628a25c53690602f9a6db6904d1e7ac67c8ab4eeec3bf0d7dbba657</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="11">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">94e1af5bd36eeba0efd47141e03eca59f72cadcbe654071c2316c26a85b21463450180a971eb6ff57a7c8c2e3313a8d006b260ec79f0a291464ae2839e4695c07ce2bc3c319dfd2d89e79729f4244ca6242ef57546f43f0e6216ef8c096f7d6cff12d7c92ebb8bf8a3cddd8b951cfb930ef7309e94d499c53f550a180c2c42f8</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="14">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">704ba4b1a1dec3882abba78dab4092783dd99d3dcfcbd3227d0f6ec67364d9884b8ddb62d62e2fefed4d96e2aa51a653c6560cd0b679349ee73873d4810dddd858efd54f735744731aea0059b308ad96da4da63fb563987763d070cf93d3db53aa29b03bad410a83ff870eaf85c6b0120066de5a81e23af1f489bfbace29d642</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="17">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">b039990a495def97d74875a2495e364d6d965e2adccae236e2968721b740f1896e89062dd60e44e17e11baa684158f3c3c522f12cd972197666cc47890cdf9a6db5875ce1de0480174132ef0b7f50899444fb0ccc90aea3d2a158ccae7722125907995b78f68132f368cf0c040fecf3967f8f8db6060098bcfcd4250f1de8cfa</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="13">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">7dadf935183f8f968f887e9c1df83e593437785b981df429168306fd06c6098813ac3ce3b0adbc588ad0e5edac4babd34881e2351ba3c14e1d63153c55cbc6862986c5a6dc71bd386a363399a3c4281faabe11f393d63d85f08ff3a4d7f95ea021f6a9afddfa520534ba5cdfc53a3cf31522c486dab2c1a60ab870c110eb8e97</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="16">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">6265c6265ef08006f452a8b11ab02ef5e7e67ec000b1a93d63b9fbd14e22d659b91c86c2a4bdfb582d8b7e9c37016494519b59b970d87a34014be0369c2c1230a9a5b9156b9afd96e2ad9e0cda3cda32d4f8b9b2e9dc64e3b171de480fc7875267c3fd4568bbbb34bc77bc640f17c91a19a16f961678748c2ff768347720a308</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="19">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">57c7f4d56fb1da1ec38086c5f694453e190f8c11eaeb72d70d1c900ec0c45514ae98ce8bab2ff2183a242df4bc7d543b6ec6749c7a281534d695f79cf9a716057362c2bda91d0f51e91d71291d3f33a3f22a153defe2a3e8414dc7e41daa2a493f955f246a2c70528541d4a51d14001460c687ecd7598160220655f64ca7f23f</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="21">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">72e3bdfd8ad3b7a8f0ce648ddb5c4d950961bbf1b9bbdba61209eac8b5f22daacb727a322c3ccd54419d8eeeece121d5119ebafe8bf139b0bd99ae7684cf971e21f504a1d375574f305e2c8fde039a7e225e15aa560e1181606fba2854eacb331a9463365e375df7cff04567bb9bc475adf71366619262fc84ff6f3554ce98e1</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="210">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">c76177e7739a0a676116eed28df4511c0922ca408cb2f4342c315cf921679655aa962acd12c974a5b73106dd0a5c8f3190d8ebd5e8a991e658a94cec5e55d147089cf510b670e44ef7deb170492b9bfa4849ee526f39584dbcc0fed579a308142eb5eb4df580a013a9dee164b55977870b8771b78ac387c6db395952efdf33ee</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="238">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">83a66eaab89693011e5b98e907133bfc992f8afda7a237b23eb03da574b74736cfd658b3a2ecd7589f794099a828030381d66105989286d7210e4640517ebd2a4ded0f59ad0639a2919457bcc48162fbef74c1706c2b0d2fc5c3d93dffa5672b9cb2b9929f00e80eca1d2cac3d7f4fdbeaf65f58cf5173971f5a8494aa7d73f1</digest>
++    </supportedVgpu>
++  </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x13F3" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="29">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">3713d817a20e23c98758f1e7b699e526ed41da94ffcb0d304d28d29b1d9f38f960ac0d9bc0966b47c172bc8490a7d57239a8acd2b568f32e1756ab237bf19affabd9782306be7c3beae2231d40409848cc4ada195eaffcb5a08a836a6c4232b55c2e5903b3dee4487d85958f488cbf0e639dcc2f2f8bf12432f93f1da3067e68</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="23">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">087f9855aebd15e7cc525fc398005abf73493a50d5b7bf08118ccd1c4fbf2f1a11ef903fc20f0e08349b40f806bf75ec6e974157dcd675f2164b465f305370de1167a7dbdee1b159900750d44c1ce6500c5add2984c7adab7bac821473cae473d2ddcff1e7ef1fc812f4f697c9a9ccd7c8084ad7b6d92de93fe6a68cea9e3fbc</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="26">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">a3ad55d0e984843c929a0a029474439242e8da831ce8aedaf69523d7057ef5b0d1281de34cf0b28da36f62863a9c74f44263f7f843eec37892492b0515d0aadda6f1d554322d62f77b33e0fc094ecc5feb58daa2dd82aabdba0296a55c3eb8e6a8564da39958f51253611db8ea2b306fbcf5382753da09d5669a00894fe557e8</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="24">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">7dd35b0639699e673a772587832da97f981052665a883f7ec2fe082a8363b2ac3e1b0e604d896f16f3555a7bf8d5f5d53a1e605cb58891c47d2e04395a9d04ab977bdc757077ad053914d8eed0dd5191f5fcd9f6f6a2bfca9b164b81010b1632668597859a0e3bb777ba903593bb7d76714c2755a9d7cb1e802bfedecaa675f1</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="27">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">a1cc02136a49fc01cbf54c2dead07d9e903b95d59c91f04bd7d41ac811c4b034c86bf93998e9390d04b3ffa44fb87aa97bb147e1c2e111eaabd210ad9e7d74dd0cd532a67cfe0babc96769163c992a82f7edd16d4c7b6bc1190c35583d2e4e780bd564975342744f152be57803ec5d96415bc3545b01a42145f4f4249009e530</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="30">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">580890cf2700aec4011580a84832542de829dcd79f13c2c5375e276a6842ca37e343f9a04f9b6b2ab7719b72ae9c4409d5bb9cecebffb274aa52ab1c4c693e8732683e49321c8455e7bf1e835e70ca51df64a2ca9b2af0d1e3bcb41e52e7cef983a8b54630fac3eb050c53cb732018ae605975577dd4bb0bf80173034092fadf</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="32">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">1b7120e0f4c6aa76b3ebb02042444691a0f81b6e2ae4c20f64606170cb436f243f00f29d798bef480cc39aaf0e962a832d96e5f72fc04c017db909d8073f5ff307022548a1750d591867dcf203402778cec27ea2d0c1b7a543d3aca79bc60c45f62155a16e17565cb305585639d585c0b124b111a928989faa2e5acbe0c6cb15</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="34">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">461ed246a7a9326d65d816e3eb9301494be06276b84a3fdf6103c56e4865db8dc35867615f4ebef7569ef120e2ef8f9d4b71a49ca09ac5eaad60e3d7b88c3c49c2afe015fdcc9d821bfe144439d14d900cdf7f2b2a4a3571a526ab4e09ed2a00c2c817af34268a5fcfb23995e1354bd49bab6c6a980b48f77ff6e2473248a32c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="25">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">0e5945cb5f4252b5b9fbdaeebea33cd4e8584c523d5ae4b34225edc5f25458b574aaf9531b8ee22b2c3f0a8e685de6f9aa966be2938797ea2b6baf047c28b1478b8237cfded162fe6ba821a3847c7dfb52ebdd7b82ea50173aad6ce2d03b5a30ce21e1ae0c17f11632fe1dcfa18cb6f9aa5dd72f73f27e79691b273091c2a9fa</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="28">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">c9e8d9d0bf622ddcb4e6ff734dcc6873729edf26d9898d3b19c6fadd4c3edb0582ae27ac31e071eef34ba1b4defb51f284c5bf3de8132a47669f1cc8eda8f317834144b0b5668dcbb2730cb9b70f4196e94bbcd742cc8103b51479db765023537b26befebf191f5d6d7573b0d33e76faee53731e6fb79591090575ee02bfd5c3</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="31">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">28c3abfb558f8fc4a2d30d0a6c348bc4baf0cc5f36fb0988b994bc022082cc1abf89a52a5dd5ae877f43f2f2ac55a23372b738b28164bf5f5adb3242f731d68223be26b1755e97553d88838abf83a8014697e0eac319b559e8008105eaa2dc9386f04b55e182cb5a5cd46b88a9beef3e326226f9527712502e986dafd38bfff0</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="33">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">afde8d1419c9d0701469b99407e22743aa7dbcda3e8c075f4b696d646156fdee25ef0f3e9efbcd1fba89e7d680400aa697c65c65b0279ca82beeb5bc95ebc2577eb5e578c269ce52df263343b0ef43cc9880a80fe28b99431c24282741251b168e688dc82a597c331bb107fba2b5d4935e44fa26cb3406b9b382d4a43fcf96d3</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="209">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">6babac3baacc5db25486ad7e14ff1e46ecdb237bdd2ce9e442d1c81254016207867dd53fa6e14f6c397a5b694ec7708f8fef5e1e071f800bc35405e1795122d398890e66548ac150eb8bad1c309d2c80c0aef86ad5eb27dd5b44a88fd3c300aa2b9896f1c3423fdc32cb397947cb387638afd4a7800520d4aebcdb5a7f00305c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="239">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">93e7926d331fe0ceffbf8dc0391478309b454d894c135697c0bdcf9463ffc445187f0420e2324e8acd6933fea8c60bf9f9f36bfa919205763521aa8dbf4a9947e052ec470cb5235ce022e5c0ec73a8e31d4da277e5e222b069482af94afecc7080af51b140697c1591f462809ed462632ff562ca8f2924e0d5b0520a0a67d184</digest>
++    </supportedVgpu>
++  </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x15F7" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="154">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">cb72f22f50e8d19fdd3433d642415d24cfdbd38ea42d91bfd4882dafff6c5586868f6b94b33cec99de43a221e47ee7a6b31a7bd86ca6796a430ee773f0507ee391dc8e161a69bfd2ce170f8ddb41001ef9f08ed284eac4ae0d75e690047eb73aae1298854b66d3bd649f7cfa765372c4fabe1bbc7b4e13260e849121a38c6628</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="144">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">99ae80f01fd7a5f5c2a570bc478ab6e65f8cb493560ceaf6f79e652445155d75031a92650e36fdd6c24cb9ea641e60d4d20d123cec130662a1ee2ea64dd5321f0f90f883f06efab13a861caa680935051ee3701b366d628be97b9412a1cfbbe29d5ba24bc96462fd0f0026b0f3a6c839f861471d9bc310b1c8922cfcfde22a08</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="145">
++      <maxVgpus>6</maxVgpus>
++      <digest type="signature">1c7bbc7fb29180d61c314de1f67e3307320a9dd4ca49e673645c88715c4ba91174363ab9eb979ac0ab178b8816496157340bfe276b663d395334ecd72b01dbca9a4463041a50569b821ae8dc6350f82e3f28dfb01fc12b910a5a77d03aae7752c6a454195e3b76a899dd6c1b3da26869157cd58ed3244c7bafd9d8388d57517c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="146">
++      <maxVgpus>3</maxVgpus>
++      <digest type="signature">4c1660aff8aa2bc09436c11cfb0a060e30343bfc7c70d6c67485db71ed5951aad96d428a449ad11f318861bf7437510818d2899ec405dd2b79d496d8e2f9137f46b662152e94bf6b9908098fbef056dc37bf6488b591fe852af7b0a4d93b3ff3213fca5d04daaba6524159905412de007205a636081175fc5115e5a55b737692</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="147">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">070f6b5b6b9f212fc86dd56c211da70da1da374f5f13305e7a1ec609add66e92d6e0391974ddd4490d00a3fe941145b0a00e12c0d4d09097ac4d5daac2f5b4261e8ddcfee08c31d2b7fedc64638efcf3e7355554cdf4054a4bb015b78386671813158cf9fe347ce2df7060832ab2b0e9469718d144f0072483dc1708ab8b55d6</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="148">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">bc1ab01998efe25d2e3214940f623b26b7d8e7da3b02cdf4e222dd54933fe8efe0ac4aaa3ff576ee8be25ec95d8c1e7e6f6473b792ab8a81e0a540b92d519b858106d92a0a7509db91c6547a50aa3becfa7fe484cac09163744a47c819c011594b638d37d120a29a261a33a0144f09480e8d331ff44463ef4cc68e3f4fcbf943</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="149">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">38c4a132c2fcb9d9a0ae1a95b6e6d97e9750999907b288a178f72ed764bf703741fd1c2a97e085f3968a277393a29fe063f96acf3d3c702db5e3dc9f764f11dccfb851cc855f35ae5879f910cf23c2c0c256fda170c91952083f354e0bde873df1b9985b6619238f040b4e7d83627ce6f9cd4ee1141d8525762e942878759d7a</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="150">
++      <maxVgpus>6</maxVgpus>
++      <digest type="signature">58dbe1071333a18167bc9484d251daf51d234da46605923193c12aa4b6eb4a29529d9491c59f2003048cf8f5414637fedb02965e9302dd2a6010381e4fbd2b4946f6b31dc75b59ed5c53bc1aee8c86dcfb5eefdd0a8630e56cbe86f4ee04138c1669656c53eab39f2ea7c4099daad505ce90267104b7e50cc496c24ddf0c0d05</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="151">
++      <maxVgpus>3</maxVgpus>
++      <digest type="signature">825e75b8143ca455cb173539de93a2833b0218caef7cabc24de47170db3c304cd4d5350ff6bdfd6f7942e5ae4713ca0607596eb0b67e206f773ab149e8d8448c701f11b4bcc43cb1ae7f885253bc67ead297fde2bc1ed2761df9d5eb35599abf0741ea9e466fd2e919867d5c5a4eef2c5aa924f8420558ad0fc4ca89878dcbf6</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="152">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">7d62805351eab4fd7630144bdcd69e102b894b0426b38caaebe32a7d50eb7a860a9c880a6fc40f7101d62de3c0c23faa03cc289e5a263339708b537e7b064d5db068717c95e0e2ddafdcfe20171f6d0478adc318d8594b5669ff750b4418b40ecbbb5ab27c809bceae2d815bee90299234a981b7365a290201f1600f09d0c22c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="153">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">0ffb6ec245a06cdf1c3c2f51f51cf8f9c95271d1f568b1196cd9adfa5c4a8abe14c26368fbcc552c4d30b6b1c906a97c04816ddbce342259ba67df115618e8440fdb74a824625aeaa962c3abfd5dc52bd2345b275f689558c349db562b27d47eabb4f3e323895bdca242ee808d672ff495f9a608193630abe36f1bc3a73f6ec9</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="161">
++      <maxVgpus>6</maxVgpus>
++      <digest type="signature">4a2275a98f444afc26e567897c5656f0c16ee60bbc32509b0acc340f43bc04b060da076109bf5aec8fdf70a6d35e2df0cb5d3da37ea496e8f89acd68efc35227cffc8bb9d44bf90d970375cdc8a848e6f027c9faf76844a033850a01e3af897d1b7b9b92a4b902c830ec91fe394d539ba608346232bd808cb27f61f6bf2a5e9c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="212">
++      <maxVgpus>6</maxVgpus>
++      <digest type="signature">0b181a9fb910eaa1c99cdee6248ab9e1a0eccd6938ffbf436ab00bf2da8d2e2b786815ebf20ede91fb64f403be6e684b5281488c5a5d1d5b15299816b56fd6ec2ddc297e7ac0ceda66dc1ae1fbebf95d5de3620988a443b2993a3c4750de58d8f09289356ba7e8181d2770a1def8451e2cc9b272cb0d23dd206272ac59c91a49</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="246">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">7e0c4388697273a411944f0c44a6f11be21d2ab8430e30602a4c4d8d0cae384d94dd59b01b84a88d80ae874bf4554f5fb14159bdd21ab75423318d96e9e1869c5a82279b6980f9fcaf916fd3896b1ecca2e6df9a09b3003cda21426710ef089c03b5ee07c46c3be09eb7bb239bca0633f36abea1bf7e2afb7108f20b460cfddf</digest>
++    </supportedVgpu>
++  </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x15F8" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="93">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">a819aafb69f51484b3f4236c107b1b76ce2474c89c8f1e6080667022db7ea0be58ae4383fcf45900e1db67d81625eac8dc2a4be544245d40d9fb5733d171efc7c922e8d135deb27fc42508de9834f059a01b612de072b37c4053da58abaaa5ed3bfc888c7d01dffeb19d90cea2660ff5952afa89beaa41aeff165b283959054c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="83">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">aec254162045576d9e01576decbac014bb30bc3c13d4cd756ec6b43d3dce512f76df8872227c1c52b9e74c1cb565dff87b44b2688a27ecc929a5998156b1f9860266e39781569147d09d017d17bf4baefbc17361a0cdad62bf18e51b472cbe2de57bd5effd10a58f36c74fde0cb2a5c1044feda92d944f817ca48610d8500edb</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="84">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">54d6cea0fc18cbee0900dd992a200e117714a62e9f51ba652da7b49a2aad1c3ca7aece5d68bcd8dad68b33d9dd0d74141cd3541b9a6de3e6f1078c2d9f76e1333fd53a8a833338668f6fc02fc16b75d051b8dc64d894d8d2c74e25fcd222bfed29a5f872e9ce6c48649cd4021f82a3ee4bdae8b44d35a4acdb5a2ccdbd40ade9</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="85">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">b3e389b484dc3763bdce0b08db2fa4bd03fc8eadb68de21c4198c3c3881f59ec31f856f063207914d7c7eb880aacf8b719c867476c98120cce539925bfb4fc0d17eaa7be7dd307d140317520aa2e5bb6b96aad897d7c68c60d6b5e9be894834b28e21318ca5af15132101ef941962cb5bcaf6e6654beb87e67bd1ed6f0c05c8f</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="86">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">0e494d474cf73c1fc7f1d3054cb4f0bd6cc94612b3ea2d5d353b8ebcd4a62f1e9a49908c068430f2ba48aff31e79fe997a62f20d406da5de8e6d1d6e56ac36751dc120ab872c68f2ffb9f454fc31b3a091f4fcc6b271a2c58e92bbcc021112403bcfdb0984a21f362f91eeaaf46c7bf4718d3a344f9119d32dc299a056573c4e</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="87">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">92151a0c07bc67c701b86fdff8cc986f271a743dae86ec18e2fed0611d2ce93f6b7dddf40937e95bbae8a60b78b71e65eed278a67ccf62bb92915ae1107d76c88076a7b4b155d741b031add0ae6881ae4750f71180aed878b9a2e743045dae2277068596e909914404950016d56d4e00d60f1be14ead2aac91174c6ae448b62d</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="88">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">cee41e85d3f8ef5ab3c7a7d17553a9f93e69ba393d38448c344150bd3a9333c0a748171c73924df631bad1bafc79c991a8fb572b4e67320ee35d40c0c2b38027b9a1d0b5403ffd808bc5e409ec85be5e8232ec264a95620bbb18602e74496cd532894aed8ad0daa07644231d92d386237bc45401c4d1cefbe59dcc54c04b5707</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="89">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">86e1ebd6a1b3b9b9305eb7107be84b9d149ef2cf5b4c001787438fa3b38ef58aeaed860d8a948c7a001067e0945dc7512983d88449e701e4b70f4898d76c6d26c6ff4f83943e2f813feb8516b9eed7d41b36faee38d5a9069ca5c34618241e58073e4e8795e4a263e8729de0eab55037bc48825f5e8231f1857f0fe776334898</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="90">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">4fc2b6683db5d9099ab176fb6ba8c72cacd20e0c27b9b8a6f5e81fa351459d41e049d693246da1b7c9ee1e080c9c030d1224d97153c57a3210788f13a99c1b4da8c2cea45ef7738206a8a0dfe57877b07fb512e89b552d419d130482560b61c67cfea049256caac1ef04867a7c1fc81165db6f8e5bdad10e0526c3270bfaf879</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="91">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">d44f586580ab73b30ca26ce8f71a66c383d2a0040323ac6c66c23e5eb3b7586707c4bd1200a7e707286b4bfbcc12bdfb505a73d2ea2fafb1f58c9cbba6eacb7768d379a8ad204ac247b6e66c3b0def3ce67a06e182d0283b8ab5405aaff39f4295982c4a36d73e3e0a98d829c584ad9b7c211033102125efede203ee3658c87c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="92">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">94f2e589bfa91b5a7173097544a7bf1e9a728c1fb53768b75c6036115cfcf384f03d86b91779355544e84d9601d29d127c95453cfa9473109f16756694265206efd048dc236cf10a174de31f0ecb4fc0aa14da55d3bd492566ffa7166e20d182962760b81749fdec15f0f6c00d73f085661e19de7f5572dc3fb53044537f4d99</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="160">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">2af8b2c1a51d3a72d609b66772d5c9a30a2eff1d4772180d889f74d560f6fc2059a98cdb6da687b6b99a93d3eb156a3534053873a7d52d20db7a8b90e34bd71adea68c3a7be6291ac3080a479dc66ed0d8a50c974e73649b1d2d2aa90beab3319f99d61832801ceac8dbd60710b226a1bf8755d8a59b18694820739903cf5079</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="211">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">95fa9c25a2aa7ed51abea56ecbd0b7e0dcb72c49814d2a79bb7f3cf00179056e365b5a75d329ca9ce61a0bc8f35834308b3dedffd6e87235dac49ae393773653774725e50c62d6ac2210b62e8eb8908e17f4a4a9fc9a5b05b8cef6db0b42cbf26d2af12e79b4675263f6ac6e21026e6260021859c39dadf6dd621279016ee660</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="244">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">a6db32dcdd713aec198609270bb03107ca077753fd8d60d3c6d893e35cb3f03bbdcead66bd99dfc56c8744c99900e22ead504634420f293b7cb2072c865adc5675ea84b8480d918ef935847a9c749a3a6c5a370ab31afa288349e17152580b5bb49769a478d340d1abe5bb32f30771346299b7c0fe5789638292a55ae1e97a35</digest>
++    </supportedVgpu>
++  </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x15F9" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="104">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">baada3b6eb063345abc20d4d12d9ea07e359d3555d2514a79f876f7564a3d721584d78df27a51c0fd93bf8fff30d39a0a3dce3a0df033a3f3fd03eb70ef8023d25cc659f8059f3f922fb4d74d8532d27662835cc89c5d1583083c598768292c22c6105cd47469c2e7451a5134cf1aa6697afa1f39df044f918a2a90942ff44d8</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="94">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">a06dbcc115d87052ace7a860f117f964008147e0476a25f1d2902ccfe908f5f3ea6d5836667b2ae2d6957a201fef6044359ed010f672810417edd149b37f3fb8eb9047a78f3b6ddb55c498c486cf054c62c18316de5808f5812b5d37c207005bded505354bb94dd9c67dee799195b0a8fcc795fc026e73c4c99d7d5f95c567a2</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="95">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">12b253813a3a93fccd794a2fec93e4ab72678317bc3ff5a7c2d5fd0aff503f51f44e73d55f37acd86bf1ac27c8cce31db4a04807b8f3e954d1456dbb51ae9cc566cc82f3260debaaa90ae03eaf4a20d2816307018cbbba7cd6c22cf96025d2371cd173061e2723fea49903941c6d12a76ab32079d0a82db2bc784247caaf4801</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="96">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">6bb02729d8b46389271e9e71af486439b79d8e50b5b3727337f1cfa78fa2a73464e90965b72f29e708bcedcadce9ef15b1311b2f9b4e47a7bf76fd9629aa308c065c12b1daf98417450d8897af2b4d6cd79c2059214742c7bfb21cc94546a362adff3d2e158af43b2d2fc49ace9d9f2c74e9098a66d87fec544885cad214cb72</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="97">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">838e9822a36f89707bea91624f04502944fc25c3af431caef24e84a28ecccf0fcae42787075ac405ac030ac70d9061a54518f25bf2a524190343cc82982e256c9c71aadb5d3d67df37b702a4e6c6f02db6f3527995bf9125da63c128d74c8db9d85b248aff8ad46f3d19adac73ab4a009ee51f1da99421d53c06801f2e578ec9</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="98">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">5a9e0651a8ba8595dd32db8590b6847379487e131b2ad07fb168629a688f71fb9023f0fdd1afd3f2d39cce77e97ff9c2a7ac1ee709590aa71f8202e75b68addd64026b835acd6636aec71e1f694d8c75bf023b9414770cc2d02e21a0603a72f6c00f30d023ab72deda5b948a8319dd5af0464ec1b6ed5208c875ec3bdd023667</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="99">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">5f50d62fb4a198cc00a11f427bfe0613cbddd4ee2626aca875da070a1da7d8fa14fd7f748e071a987f0738379220e3e57c9351265e24a833d279e56247b828d8ed665d8dcfeebe7dab5e9958718f77111e1e8b7899bcddd89d1c391de7aa2acf313a60ca5f2fa3d00db9533139fc23b10806dd6a407cc52b4e439c020c08f623</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="100">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">6a71f086d67582ffb2ac054ebc8d084da54433f7fa66922ee15b11e0abf3fc22d4d6a0c6ce5afeb04d4e9947b6582730f222ac29f0663631075c5c0e4bbfa5492921ff4a07c0075e34524036974b4b8210a52259e84410d789c52f9ec54bccad60755f881317cce80896efe782ae39f8d778697846e619730722fd6c70eb0562</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="101">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">82ee834c91058b649679be24461c46023146b0caf710074519742c0bde6e6b721d4f42ce50378afd2ade8573006e4d390019fbf6b1101a401b0d05cf6ce79a354c100b4b16bcfc3472efb578660c9fe1b3fab63e7630c8443c8f6ba0cba023b7c0cead95d8ef9913df9900418e49b70501b327e82662a0b5cece46f898398263</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="102">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">3a2cf21a5e6ce8c5ad5d775e787bdc24ed80cf07576826a26461a6b25fef8a5cf344f1b7592e7f1f9348f97b1e87489823671b7f308e7f7a22b772e6028171735478c006da4940d8e90141937d628962600a570b2543fcea6791547cdce894f26d5bd749ceef4122be1b56930017f3f49a53331131ed71ecd50cae852782a085</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="103">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">61b7e16b551916a691397e7a7bdd57477d1c8be82e30947823d12f8b94805ba3f396ed6d85708c67196ff7079b8ac1a26309cc7d8191bff71797237861343724677b37c22d479071ebbc8c907aec12af0be91aade09fbb85f34bb49b1f1a8caf8c3db062cf2fce0d787fb658a12bc3381b203dbc3fd7136316aa830d9ebda088</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="159">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">492d52cf5219f737826252eac5341a5caaa59bfa68826e076786edc99dffb849ab6540d15f8f2858f280bace1daf9b8cb8c344cb49ef47ba0061de7e011b65d165abb88762350377c166ec6d788479c564fe090ffa4252cccc7d4ce6d7f23f4d3b59dbdba2cc08b84cd077691a31cfdad619caa3baa5e8d6d165e3e288163c37</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="213">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">0520f92b4c39d1de79987979da498077c9c2ec38921de682c4fd21d431c0263b2333975c1a8160a72c4b932f8d04fc73082ba26ad8a7c361bfb2dfcf996fc6bb2987493d8bfc8e2789157225f96076a42506f40e75f74f68dbb7ea8daa9fd36743d2f7fd7de8b6061e92104e2511d78f1c8af6c376b95de1a7deefade67d436e</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="245">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">57bca05ebad9e0579ecdc1caa4dd6077d4c1ad21acb7e25e9da9c5df8c344fb80e3965587466fb6a177588bf1a8c2cbef8a0baa3f75965a151c55b01e40ea6e209fe3f9c17e2db432b7bda67ad574c332e3bcaf8bc9f8f3de8871a5bafe1bb67939be75b124835be7bf0d7d57f6bd6afe6d8937fc2bd7d99ba69a577903be602</digest>
++    </supportedVgpu>
++  </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x1B38" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="62">
++      <maxVgpus>24</maxVgpus>
++      <digest type="signature">76da5ffb10ecdafc3b4ab312ed72b712b6ef4279b465837bc9fe4df3dcb63ba41505949a5b9e5b0ffc5168a9dc5641eea1e4e45184863054c58d673b5864f6ab809e5e8ce973a1ebb6dc7adb254c86c1eb19481907b185740b47aba6374b8ef142b524e44e9957c91d4ffa0abec86b260036c3ac0b80262e8f83b352f51b25c1</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="46">
++      <maxVgpus>24</maxVgpus>
++      <digest type="signature">63961194e5c9c4749c543407c2e616d3b620f4b57575eafce0d790bdf72adc850a8abc2849d7ec8534688e6c9c4b08d0645159c7c669a50a708b4802942ca7314202b041a5904937bc111870d383a57c44dd1d8f90a87777a46b352f84909c24ba6ebee6c29b0dced5264262edc907d2ae2f6721302bceea789749887b977e5d</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="47">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">b5b333c958ebb7ecf9395d15657379171b775340354d0ba8b1bca1da9b7f1116f355c9bde8986ddfd4c7b66912baf3a05adcf7b6edef13498f80553ed1c3dd500d2f477140cefbabfea3d8a3510476c4c9fedf21e2c336f08ae8b643b190cf928f2c93965f937f4329ab0a0a8013d564eb366c92f1a0bfdc0e60974598c2e28b</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="48">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">0cb822a5db93e71414ac787c138336151a2592346e78b3a8fcea5faf5262d1865b0b0991aba6ca4479eb28a98fdfc521f22c5263570b63f214a9e56bbb4a57135ba03cc85f4064c3eb945e81353be6f89a51664399831c8105e6d486b53d4111e1ba4679d60b941ae2773775d71d4e00a741b362efec63767edd14896c16a96a</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="49">
++      <maxVgpus>6</maxVgpus>
++      <digest type="signature">035c8fc83dfc8c5eb1b4fdc8bf8ef2f915d9538be5ba464cdabdef7bb9e9cf6114ea1e0f84a0cf7fd6073578acc9012d86f2286673e9cd0138d0b3a2bf7b4aee6f856c9ad99a85fb2459c9dc397f2357dd71d7f780e63c87f8401d8aa68057f84bbe9bc52b65faa4a934bfc63e73c28a0ccd422dd4f746115f2e09cf29dec2ec</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="50">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">d1102d314293ba32394245cf9e44bf6cfb7b37b748ec7681ff508ab9559acf641e101d7336e21fcab5d39a87c286f6e6a03a92ab5da1bbf206e457faa1e2258959edae002d164ec12e4c6501f762b736bade0bef970a57fdb37c1399bc8ddf5b8f9ee34f8117f8faba4b386626c5733fc2dc08f64a23aa4653982ea1129e7bba</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="51">
++      <maxVgpus>3</maxVgpus>
++      <digest type="signature">315ce7373707b479120131470b89ebde726a8d851fe59abd5ce2f2feb422ac0376fc044955a21d353ebf7aa11a24c7b7b96f5a2b3dfc989bfee6a238718b9ee4f559d075620321d70cf4d48672723efed5d098f4885f7ab82b1072d7261322b74f104eb604ddeb20debbaac3964767bb30f1c275ed6699bbf2d2d877da748d27</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="52">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">0946fbf953e003d44a8bbd5dcbee7ba47fa62004d4ec8a0ffebeb4349ea52895e684ce2ff161fcc64e656396fb52a555039fab0c285ae889feb5bdeef57583deea49191c351b122e9cc3816245517358337c6a14a86b9793a671285da198666a3dd2aa0b4d66c4b2bef182e107731c33c2b29e59d1c9bd000981adad3e62b26e</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="53">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">2771dc6fcde5a843b1963ae190e33ef24037427bcbe3de2fb9577aab0146a36b29869bdc12edc9bf24f80ce54f54c313359e50713795b0ea5649e4773cb187e495c027ca6d844ff12e42d433cff86a7f67bc4e2ea2fa0bea25d85337c0a238d000e71a6a9e8aa94f06ec18a49c2801debe0d4c0446df89faa6635350b6829bab</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="54">
++      <maxVgpus>24</maxVgpus>
++      <digest type="signature">5a4d59776f2d66f0fb89f52c586475389e769d070a58c432d6bd1ba4afc829bdbaf491f833ba4aea38d01dd082cd5c6934a32d5833e450fe57c1b058e5c063a5cc5b83fc42db22f13ed6f4a73130e526787f2d6a386b41c67464fd4f9735013acad9884436c811a81cbb72c56332cc1777a3d47c1b5d0e7a3b6fbd20cec0563e</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="55">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">079b48e46bc567ea0b154434d6bd156e09b98556afff3ac8dbb65ed28a3ff87f28b4abac7dc1f40ac7d8372a32a1b94452a543968229e7b8c4fdf9205a17ccf195445573f600f1746283f6e6c087df6fc8e721961584f0972d773197fbdcaa1dc17f0fa382c338b5ffd13dd47792287d3e9f4311fcc0f16f8da11abfc060b503</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="56">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">15c5991ebedbdd1de8aeba5b504370959c43986db2954388a702b243245cfedf393f17b87d98f82161a930511ef41feb8666ad1bab2365e69a54e723d868efd71ada5e5c0f957ab291a5c7a87992d8d0dc23d64dd822a244ff51f1ea8b615b85d345341d16a6825c9a06f5877d30ef846a2e86da5511b4c3f6ac4e7156d9ad35</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="57">
++      <maxVgpus>6</maxVgpus>
++      <digest type="signature">bba8e28d911e694b77b32f5cb03578cd91411afdde272ec7aa8a0e15b0af1899114adcc68a01a08e935a99052eb56db7add5d7cd2bd6c3adf91b491b694a0a9600240df7dd0cd8c1922cb56cd286f1916ece8aa8501a23cadcf28b846a2dcb3d85e2024d7b07ef5f6ec35e942feb8adda4e746b2a20ed63b3eaf53a6015db1c9</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="58">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">cf846632562006e736606e968812ebc80b81851914983e191e0831a506fcda22866088085e1c873395d16e997be578e39fb8de377a26697a26ca546cf2c08a03a36776182d2d3d8c8603493698c0cc16a2fa3b12c2cfce1f8915207066101bee5217ca3b3e3b70c27aa20d2910ec1c0fc64e522bd8d6dab45504e17b807d57d2</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="59">
++      <maxVgpus>3</maxVgpus>
++      <digest type="signature">39e78e5ceb65907476daf19fc504148124bd0d539a2a72c63639d8c08107a78f416a5bc1acfaba4143a4ae53d7851ae8a9f42dc7cb6da13fff17cd81028b398b615cabfe7075a8f8dc3e9fcc9ef9bd63093f4fd9c115a91eb590745b513b081cc36af2aa6c9d3c16a8bd365ce84eae6f176870f20846edbe8825d5b7b8db11bd</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="60">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">557fa063d39ad2fa82b4f1b6442c98c9799119a99eeb3dd42c9780ebf96d9f894af16f32bb059a4bbcdeb4922bc5424e8ed24ad2b84d0f73d1d9bfeb7c26b6699e55035d71b6b90f4de210cc5446fdc6f760e20aee3dd1bcacef825589fa4c17b57721540e645ed455a4aff098f0a4b226234e8e093656171138a2956b3022d4</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="61">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">583d9ea284b643e584bbadc92988e507d7e684766f0d82af0639205437d8359194e4206def3c71cc3958b200961a9c8280cdcab3fb7273092bb818d34591530f58bf5d8b63ff59d95cc653edf2347cbdc5add9dfba104d3a7a757986d60a39b70178f14e4ee9df6d6ef16022dc783a45331feb8581981e5e245df380235818ee</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="156">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">0a8d3b389fe8295cb6369ecebba7c35e65824472132637a21d90819734c96613f213a48112485432c4c3605295dbcf442afe5db680b22aa283045fc9ab3327b8b77e23fca17141e889760d96ea6ffd9bc2f6c5304e1532b61dcfcb430543706acf07d5d2b39c1fcca64bc8fa498892fb6750ca71a57304f0145228f75879d730</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="215">
++      <maxVgpus>12</maxVgpus>
++      <digest type="signature">51781fe0a0dfda36527fb330b7792bcc24a2afe92b062e946cab39f91a13bb1abc8569feb0aab08c68bd375f0229b73833e35bb6a60fabb9d47b8cf3f1babbca089b7e20b87038fce93920a4f546ef8941810412418c255521a7caeb18fc743f47f03e0caaf72670eaf3d65befbc6f42f9fa1a839140611064c39e1a000450a2</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="241">
++      <maxVgpus>24</maxVgpus>
++      <digest type="signature">274edd0f7957cd6de7af0dbb323a987aa4e5504296e9cf8584b6780df6e9c80e48f56e61891b8aed525a733c90e71bce56e9a5fafd2f7e7a2c489712b4f15d4d98710f343393f89e388d094cedfd5827344f5c5ed75d6974d4d952c7ff5014e5803f18fcf6a292d6b327b685cf01af77828358aad779b096f30fbfcc44fcdbdc</digest>
++    </supportedVgpu>
++  </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x1BB3" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="71">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">0c6cf47b1c43129c33c76bb377003f55cc2bc8c40df91955dc8cdd1398001e955006343eef36d7b55b4c2bd2480790f318111afbeaaf9741e048d65e1b2c2af2c5b71ba680ad17060154cd0b339e13a10fc851266fcb4ec92a359cd8e9996eab750aae9d8c4a8ceb7dc234217c3839254b2634f3d6b8677f4817c9c261d71704</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="63">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">2fb6140e01102aa17cb3c77dff092b48e351a412d4de23f10e8f7db209715727c9849116e71076d80d4dabfcee038228546812767025f0cc75e2ca45ae9b6cf00c036d93cda738de7b0f32ace9941a22f4ac0b0d745ca6a957d51b1c413aad9afb16f62bdc246fdbd529d01a444b1cc445a814ccc4fd1d28d9fb7ab0af9d651f</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="64">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">2a8e7193d6dd945a2415c58b22e5685852e0b935c88ecce23a4557f03e20ad482919bca8a79da92c95c2d464ceb4140d4df34590a4d21e063c41681844027dad871cd278f80d9c8e36ebf0e06399c89eecf16688d2953e0a1fa8a26cfa8eaaad2acf71ab050c0d1bb3f4caa63b6436976d40d132a6c712227c1cdae724e843f1</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="65">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">a2fbd94a8f5379159b6312b6d88729993d7c3cae86f3b7a873f9a7fc1b01b751966c1c6eca5b45931f32511ea89f4f143b1cbbb9902f6ec8bd1d16ca4c96dc8f469812fcc6d5a65a3a15788afe83eda814a6c5170f66c1325fc68dca467f9a2a4e28b384fe2893924c2d737133bf69c50551666b95bc32824133f33bb6c11a1b</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="66">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">cc9b4c1ddbcc647f5f378192bc1532dbfaf8ce82767fe86412b72ef9e8e4f980457e07ce74d2bf2470f4519b2abbfcf480d057155b2aea62658b7cac8dad02ee00ec66baa077b417f4de19c8010214a741a11e8039f7dd97b67d0596832fca6400dd15e19603aa2d4af88e760cb42a6fd245bb5d140ac9a404e98ec87e778d48</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="67">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">b8d334b2b68db2acd61ff033a4e6b5b501eb55de96f30a7f0d1ece52dafa3996aa35686223707a5c8820603d3a6a12e3d74c245a60953529ae8a2cee752e01d5aeecf9c7ed13f5dd32da47768e0855fd09c8b66cec33eb35d743dbbf602ef37077aad2dd5eb82b4b212b3d28d8ac55eee9395da13290dd5487c28f7c4de86d44</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="68">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">2871818b2d4da0f8a4ed61772344414a9257d4a4c1f0a3b1824f49d4c6f789070acc24263599d44b17ed1472da94fd8b4e4d95308e4c387eac8caeb95a93cc40c9a47655d7d8cd0b2612be03920e7410a266e642aee39183ab4c2c5ceb8bafb9c23e52e2bfb69f121663bad396f750c4a9967aa50c6d51a8131784fe30a3f864</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="69">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">d2c323be4b9d7ce728bb7646a2cd20c253d8eca8dc885c9998d48451e98e0629460d37f559012809b12ffa8b8e38e8bacc0874474c4ec9d7a4dd596ae7329ace4baee2e8d821f620233b79e881925042cde030c70c8782694312e2000d682693edb7de3c7e54e389011e6ade058c7ba420b34f83ce5a18412d21ad6b1ed8d0bc</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="70">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">1d3e6dd34be62594d45cc54eec4b65ecc367c668a964c7b2a539383c37b83f3471d6473edb18b368502475a27b3abd38e1ac95f57eff65f7647a5088f72ad3a21e66fa373310b89c5e5c948b3913bf76c99f6e74795e4398f0c46df59c265f6f69bc87ccd104d44147a6e42b5e4f7d29770d9f1565fb7ce97b1a46224f253da7</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="157">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">a50b94bedf7a19c06af7570a03b244b6af77270eb506c3b91dd7d31f1d2cf52c34119f484e920aabfd0d41404ae671c7e83344c045671b912721ffa9b21da8af9b19fceb2bc6313504cc707ad25da3268a55f3a3212dba75a238392bc3d44ac931662a2601245e64bfe2254db3060d150a041d90e09d8e98a0ac8c8d9606d1cb</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="214">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">a9c38dffe9ba11da0fc2fe2a579e837564a788d1ff0c39789b834161fe675e1676792ee5dbe37134ab52a1ab4508d7ed3770af6e63b51400cb6c15fd1e4e2bf068c1a4014275abefd4363270a6ab14a744acca47eb030be22287eb4899bf821429d685d6644513b8d10351f7a8ba398bcbcf869e6617d0ad7348e77d3339cdfa</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="243">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">715724d4a7467b2fbc386c30c7765df94036f242caf9ef5594622abed6fb8eb095aa6cb0c98ede59f62d3ff9587bbf5cffc1bc2a8d8cdedc6e547428613012d64f192c25fa961e400c7d51f20b8be070bbc1aa97fc75d052b5262443836b3520c23fef0e5c5c2678057c8d86e7a2d0931eb98b474d93ea739862ce3aec6c792e</digest>
++    </supportedVgpu>
++  </pgpu>
++  <pgpu fractionalMultiVgpu="0">
++    <devId vendorId="0x10de" deviceId="0x1BB4" subsystemVendorId="0x10de" subsystemId="0x0"/>
++    <supportedVgpu vgpuId="82">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">1ef340b20bcd87a35e04ab9d94882ee71f4d2c2e6039b75589532a1d33b3392c3d7ea5d69c3546dd03f47a37c985ccc07e58b2352293967216f5bcc6f0b4d0861d74b62bc4c73051881f3ac52a541d8e56d237a038a44dfc2326757fd5e85a300ad6fc6778bc35da11179c74c00bca704e36836ecd0bd1be06876c8a8ffb7dad</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="72">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">a0ffffdc3cc538e41105443ad0d366c4e65606f2457e190342a6c302f531a7492b9592089edb4b15a010de3718eae22d01d5720499cfca301d17fa0905be0310f1f84dec5212bda6e59cc945169fca5f8f96c007daef21c391b519cd099e23d1d235f7018caa8be5d7a7e70569e784dc919b602f1c338d525ca3525e45ed7208</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="73">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">71f94fea35d4f2f8b91f0c40367b1546591554c500165b23c11234d50f2fc94cd804abd12dd57af005af5f002e67db331d80dde67dc25e0811c8f70a01ad9017c27bb0527584e621430ce69e63b7553e8a4643d4da62a5e20006f64f05d341ade2c8abb99275319d8132bdb544d007e0e6977890fe809d66c95cb92413abf4b3</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="74">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">1f33ac76c8586004b3c124ebe30485a370792eefd939999db9e71c61c7349ee5eafc5ed285c4b2673daec801a93e085ae8b41af88ed482a6f367b4806cc4b887dd476482b91293d5657a68d9d53e3af3e4d7525bdf16da2943fec5fd0e1b3cbe4356f1324a3edb6ea14653137770b4fe2aa467451dc0035a8944da769514b02c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="75">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">95f18ef18ce456fa64817a2f42c8dbbec6d0cd4ab2ae323d28b8d73a541bf036d48d5f170e726d0def7b7d28a2b78d5d2ca223d7a5a1aa4cdc5f9f554064c403ff75d0bbc700e4691e05486b0032947f3fa0ce83ca586c9db7e70a250335ad9231eab377b39211f09593ba3414680404b6348238e95f50442bbeaf8cf20e1504</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="76">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">06d14d1909a2a86146fa8c528684e7a64060c9548882b3a7149a4959d675eb9ea40c4d790b67f0922d37e3471ba430b29f24a2b97cee1096e2f57583a5b82adf88fb7c17c1e3d7aa81555e7fb54782cda6949975bd408ed3d0af347be6c11ae260669345e344bcdbdca23eba37985345453f5d625b85de1b7e858e3e58214ea8</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="77">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">c1fa6cfb9187ed2a5710ad1e9f3eb240079ceaf2970c9ca77f38d65120029ce21876e26e9fabc345d5276b84835f95ced41e0013d1438c6d1609216a3083f1672988ca4ac6d6952b865edf73118735caab7fd1f3ef2ca23c4def64adb709e51eec9df74ff6dd41a1d4885c31b3d5e0e31b5fbac0d07c293f2d22f2fb56e93de1</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="78">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">a90eee7017bd1832543ec9c9b8f99674f9facd48ea7b6d2b0310759a8f6c5fe2e11446b3cdc394bc2584b88a3d6696a89444177eba30f1b41350773da8abdb6c89cef7aee1f60e8040d29dfa51640bf52b51d6dad438b8301d1b9c2ce119238f853de6a32a6fe61a37170f94fcbd668f058f386ca5d2972451ea26091b1f6e0c</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="79">
++      <maxVgpus>4</maxVgpus>
++      <digest type="signature">2d112019c76d6d9492b365f4c71dc66dd34a7576ccf4e15719501e120280dddf56570c2e3ec04ec7fc15f0322409a10ca59ac0a50b4019e5583f9b2fb7bb432659f62224619f31f0f692861f585ebaa907a5fed990b974eb2e0b8333cd72c02ab91cf1ff0ff551da2e4243b50f8a6798f0aa0000e445cc8f7d4cbc7dd548a154</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="80">
++      <maxVgpus>2</maxVgpus>
++      <digest type="signature">5c64c0d1caf76ca2401ede322b2fd3c49a702ee1c43d7f9719364a62ef3e98e12b42f2b67ab95b8919d49356e679b0ad14665b2fd74874fff29af60158c89947e4996848b3bd24cedd4d60b51827b70f5c45e17b7ef60e74e81294c8da35473015e4ec106175bd95008c5e65e885206bee38a81b9fcdb8680564b738d9254d95</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="81">
++      <maxVgpus>1</maxVgpus>
++      <digest type="signature">6790a2dfe0fa1abd3f4e21798aff8691628f8c4ef0b2baaf5203f60fd56f76187b83df7fd6e4045f1377dd8e901a66970cdcb06a5e588b68043b38034aad5157daf2ff4ca6e58689f6e9724f87666814c64b302eb395106c8b0ce0711a5b4104233072bec6e2f3a6e87fda7246d5cb8e321cd686e54826e2da2865385d908762</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="158">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">457b521a62122ca8f2584831b64c9e91fa5e046fd449ecf01938c4784c84313a5d3dacfe009a3f744e70374bd72836446ebe76413fa1e6e96640b981888bc3ef2afa93551d7d41d9189e2548a2e6fe0ced31561e6ddb276902d5fb4a28ac46fc2bb69463e27145318b9ec138ffe354cc55b60a22875d39ad676ea9dd7c498d47</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="216">
++      <maxVgpus>8</maxVgpus>
++      <digest type="signature">4896c7d31014322d5e814e64d703a5e38d21805bd7d28555ed1620ffc64d26b6efe78af5f32693648b470f52067796c8b4ee3bf9cf3795f2a5f9f82e456ea5c427d54261d9fd7656916cd7876c2011b1bbd84a533b33e7740eb2ac795d007dcad057c17c814c7cbdcd348e117f9c2ff356345e3cc884f9d1deaac3843199ba99</digest>
++    </supportedVgpu>
++    <supportedVgpu vgpuId="242">
++      <maxVgpus>16</maxVgpus>
++      <digest type="signature">065740fc81f7bd360999c6ace458c58a98c151f527220cd90292fbce167c807b0d5956c2a0b83be844964ea56d0f1345bc8721495643f41d2a277a53cbc59863143127653d2ad133665e2fec4a05da68edb56ea80658d331a9765a1889dfd94c7fa9362f2e0f413f7eda37dfb657221315d2ebfdc8a1bf2e68c1dec86bdbbd07</digest>
++    </supportedVgpu>
++  </pgpu>
+   <pgpu fractionalMultiVgpu="1">
+     <devId vendorId="0x10de" deviceId="0x1DB1" subsystemVendorId="0x10de" subsystemId="0x0"/>
+     <supportedVgpu vgpuId="126">
