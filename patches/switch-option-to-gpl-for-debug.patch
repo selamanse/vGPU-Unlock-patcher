@@ -8,10 +8,10 @@ use --force-nvidia-gpl-I-know-it-is-wrong option of patch.sh script
 to apply this patch (another option will be needed to actually enable
 it's effect in a build)
 
-diff --git a/kernel/nvidia/nv-frontend.c b/kernel/nvidia/nv-frontend.c
+diff --git a/kernel/nvidia/nv.c b/kernel/nvidia/nv.c
 index 656382c..24d703b 100644
---- a/kernel/nvidia/nv-frontend.c
-+++ b/kernel/nvidia/nv-frontend.c
+--- a/kernel/nvidia/nv.c
++++ b/kernel/nvidia/nv.c
 @@ -30,7 +30,11 @@
  
  

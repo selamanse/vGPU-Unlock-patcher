@@ -26,7 +26,7 @@ of KMALLOC_LIMIT in os_alloc_mem()
 ---
  kernel/common/inc/nv-linux.h               |  2 ++
  kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c | 15 +++++++++++++++
- kernel/nvidia/nv-frontend.c                | 15 +++++++++++++++
+ kernel/nvidia/nv.c                | 15 +++++++++++++++
  kernel/nvidia/nv-mmap.c                    |  2 +-
  kernel/nvidia/nv-pci.c                     | 10 ++++++++--
  kernel/nvidia/nv-vgpu-vfio-interface.c     |  3 +++
@@ -38,9 +38,9 @@ index 792287b..43d895e 100644
 --- a/kernel/common/inc/nv-linux.h
 +++ b/kernel/common/inc/nv-linux.h
 @@ -1744,6 +1744,8 @@ static inline NV_STATUS nv_check_gpu_state(nv_state_t *nv)
- 
  extern NvU32 NVreg_RegisterPCIDriver;
  extern NvU32 NVreg_EnableResizableBar;
+ extern NvU32 NVreg_EnableNonblockingOpen;
 +extern int nv_vgpu_kvm_enable;
 +extern unsigned nv_vgpukvm_kmalloc_limit;
  
@@ -100,13 +100,13 @@ index 045d7f1..a0dbf2c 100644
      list_for_each_entry_safe(phys_dev, tmpdev, &phys_devices.phys_dev_list, next)
      {
          mdev_unregister_device(&phys_dev->dev->dev);
-diff --git a/kernel/nvidia/nv-frontend.c b/kernel/nvidia/nv-frontend.c
+diff --git a/kernel/nvidia/nv.c b/kernel/nvidia/nv.c
 index 52b2b87..7e861f4 100644
---- a/kernel/nvidia/nv-frontend.c
-+++ b/kernel/nvidia/nv-frontend.c
+--- a/kernel/nvidia/nv.c
++++ b/kernel/nvidia/nv.c
 @@ -358,6 +358,21 @@ static int __init nvidia_frontend_init_module(void)
-     memset(nv_minor_num_table, 0, sizeof(nv_minor_num_table));
-     NV_INIT_MUTEX(&nv_module_table_lock);
+     nvidia_stack_t *sp = NULL;
+     const NvBool is_nvswitch_present = os_is_nvswitch_present();
  
 +#if defined(NV_VGPU_KVM_BUILD)
 +#ifndef VUP_MERGED_DRIVER
@@ -123,9 +123,9 @@ index 52b2b87..7e861f4 100644
 +        nv_vgpu_kvm_enable, nv_vgpukvm_kmalloc_limit);
 +#endif
 +
-     status = nvidia_init_module();
-     if (status < 0)
-     {
+     nv_memdbg_init();
+ 
+     rc = nv_procfs_init();
 diff --git a/kernel/nvidia/nv-mmap.c b/kernel/nvidia/nv-mmap.c
 index da01e46..140d53d 100644
 --- a/kernel/nvidia/nv-mmap.c
