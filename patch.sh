@@ -2,9 +2,9 @@
 
 BASEDIR=$(dirname $0)
 
-GNRL="NVIDIA-Linux-x86_64-535.161.07"
-VGPU="NVIDIA-Linux-x86_64-535.161.05-vgpu-kvm"
-GRID="NVIDIA-Linux-x86_64-535.161.07-grid"
+GNRL="NVIDIA-Linux-x86_64-550.54.14"
+VGPU="NVIDIA-Linux-x86_64-550.54.10-vgpu-kvm"
+GRID="NVIDIA-Linux-x86_64-550.54.14-grid"
 #WSYS="NVIDIA-Windows-x86_64-474.30"
 #WSYS="NVIDIA-Windows-x86_64-512.15"
 #WSYS="NVIDIA-Windows-x86_64-516.25"
@@ -18,7 +18,8 @@ GRID="NVIDIA-Linux-x86_64-535.161.07-grid"
 #WSYS="NVIDIA-Windows-x86_64-536.25"
 #WSYS="NVIDIA-Windows-x86_64-537.13"
 #WSYS="NVIDIA-Windows-x86_64-537.70"
-WSYS="NVIDIA-Windows-x86_64-538.33"
+#WSYS="NVIDIA-Windows-x86_64-538.33"
+WSYS="NVIDIA-Windows-x86_64-551.61"
 FRANKENSTEIN=false
 
 KLOGT=true
@@ -519,8 +520,8 @@ $NVGPLOPTPATCH && {
     $FORCEUSENVGPL && sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DFORCE_GPL_FOR_EXPERIMENTING' -i ${TARGET}/kernel/nvidia/nvidia.Kbuild
 }
 $TDMABUFEXPORT && {
-    applypatch ${TARGET} test-dmabuf-export.patch
     cp -p ${TARGET}/kernel-open/nvidia/nv-dmabuf.c ${TARGET}/kernel/nvidia/nv-dmabuf.c
+    applypatch ${TARGET} test-dmabuf-export.patch
 }
 $DO_VGPU && applypatch ${TARGET} vgpu-kvm-optional-vgpu-v2.patch
 
@@ -551,6 +552,7 @@ if $DO_VGPU; then
     fi
     applypatch ${TARGET} vgpu-kvm-nvidia-535.54-compat.patch
     applypatch ${TARGET} workaround-for-cards-with-inforom-error.patch
+    applypatch ${TARGET} vcfg-v16mpp.patch
     applypatch ${TARGET} vcfg-v15vcs.patch
     applypatch ${TARGET} vcfg-testing.patch
     applypatch ${TARGET} verbose-firmware-load.patch
