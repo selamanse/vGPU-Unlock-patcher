@@ -42,6 +42,8 @@ static const int patch32_old4[] = { 0xA1,  -1 ,  -1 ,  -1 ,  -1 , 0x85, 0xC0, 0x
 static const int patch32_old5[] = { 0xA1,  -1 ,  -1 ,  -1 ,  -1 , 0x56, 0x85, 0xC0, 0x75 };
 static const int patch32_old6[] = { 0x55, 0x8B, 0xEC, 0x83, 0xEC, 0x6C, 0xA1,  -1 ,  -1 ,  -1 ,  -1 , 0x33, 0xC5, 0x89, 0x45, 0xFC };
 static const int patch32_old7[] = { 0x55, 0x8B, 0xEC, 0x83, 0xE4, 0xF8, 0x83, 0xEC };
+static const int patch32_old8[] = { 0x55, 0x8B, 0xEC, 0x83, 0xE4, 0xF0, 0x81, 0xEC };
+static const int patch32_old9[] = { 0x55, 0x8B, 0xEC, 0x83, 0xEC,  -1 , 0x53, 0x56, 0x33, 0xDB };
 
 static const int patch32_new[]  = { 0x31, 0xC0, 0x48, 0x85, 0xD2, 0x74, 0x02, 0x89, 0x02, 0xC3 };
 static const int patch32_new2[] = { 0x8B, 0x44, 0x24, 0x08, 0x85, 0xc0, 0x75, 0x06, 0xeb, 0x08,   -1,   -1,   -1,   -1, 0x89, 0x00, 0x31, 0xc0, 0x48, 0xc2, 0x08, 0x00 };
@@ -353,6 +355,10 @@ int main(int argc, char **argv)
                     cp = find_entry(file, p1, patch32_old6, sizeof(patch32_old6) / sizeof(patch32_old6[0]));
                 if (cp == NULL)
                     cp = find_entry(file, p1, patch32_old7, sizeof(patch32_old7) / sizeof(patch32_old7[0]));
+                if (cp == NULL)
+                    cp = find_entry(file, p1, patch32_old8, sizeof(patch32_old8) / sizeof(patch32_old8[0]));
+                if (cp == NULL)
+                    cp = find_entry(file, p1, patch32_old9, sizeof(patch32_old9) / sizeof(patch32_old9[0]));
                 if (1 /* force 2nd level for now */) {
                     if (cp != NULL && i == 0) {
                         p1 = find_rel_xref(file, st.st_size,
