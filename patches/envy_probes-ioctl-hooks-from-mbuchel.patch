@@ -67,22 +67,6 @@ index 0000000..2de66e7
 +#endif
 +
 +#endif
-diff --git a/kernel/nvidia/nv-frontend.c b/kernel/nvidia/nv-frontend.c
-index 33b2d12..7312fc3 100644
---- a/kernel/nvidia/nv-frontend.c
-+++ b/kernel/nvidia/nv-frontend.c
-@@ -417,8 +417,11 @@ static int __init nvidia_frontend_init_module(void)
-     return status;
- }
- 
-+extern void envy_probes_close(void);
-+
- static void __exit nvidia_frontend_exit_module(void)
- {
-+    envy_probes_close();
-     vup_hooks_exit();
- 
-     /*
 diff --git a/kernel/nvidia/nv.c b/kernel/nvidia/nv.c
 index 20dd322..d1a2e61 100644
 --- a/kernel/nvidia/nv.c
@@ -96,6 +80,23 @@ index 20dd322..d1a2e61 100644
  #include "conftest/patches.h"
  
  #define RM_THRESHOLD_TOTAL_IRQ_COUNT     100000
+@@ -977,6 +977,7 @@ procfs_exit:
+ 
+     return rc;
+ }
++extern void envy_probes_close(void);
+ 
+ static void __exit nvidia_exit_module(void)
+ {
+@@ -987,6 +988,8 @@ static void __exit nvidia_exit_module(void)
+     nv_unregister_chrdev(0, NV_MINOR_DEVICE_NUMBER_REGULAR_MAX + 1,
+         &nv_linux_devices_cdev);
+ 
++    envy_probes_close();
++
+ #if defined(NV_UVM_ENABLE)
+     nv_uvm_exit();
+ #endif
 @@ -2367,6 +2369,42 @@ unlock:
          }
  

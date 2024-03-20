@@ -22,6 +22,8 @@ GRID="NVIDIA-Linux-x86_64-550.54.14-grid"
 WSYS="NVIDIA-Windows-x86_64-551.61"
 FRANKENSTEIN=false
 
+NVOSS=false
+DBGNVOSS=false
 KLOGT=true
 TESTSIGN=true
 SETUP_TESTSIGN=false
@@ -40,7 +42,7 @@ FORCEUSENVGPL=false
 TDMABUFEXPORT=false
 ENVYPROBES=false
 
-CP="cp -a"
+CP="cp -rpL"
 
 case `stat -f --format=%T .` in
     btrfs | xfs)
@@ -72,6 +74,14 @@ SPOOF_DEVID=false
 while [ $# -gt 0 -a "${1:0:2}" = "--" ]
 do
     case "$1" in
+        --nvoss)
+            shift
+            NVOSS=true
+            ;;
+        --nvoss-debug)
+            shift
+            DBGNVOSS=true
+            ;;
         --no-klogtrace)
             shift
             KLOGT=false
@@ -120,7 +130,7 @@ do
 done
 
 case "$1" in
-    vgpu*)
+    vgpu-kvm)
         DO_VGPU=true
         SOURCE="${VGPU}"
         TARGET="${VGPU}-patched"
@@ -172,6 +182,20 @@ case "$1" in
             GRID="${GNRL}"
         fi
         MRGD="${GNRL}-merged-vgpu-kvm"
+        SOURCE="${MRGD}"
+        TARGET="${MRGD}-patched"
+        ;;
+    vgpu-kvm-merge)
+        DO_VGPU=true
+        DO_GRID=true
+        DO_MRGD=true
+        if $SWITCH_GRID_TO_GNRL; then
+            echo "WARNING: did not find general driver, trying to create it from grid one"
+            GNRL="${GRID/-grid}"
+        else
+            GRID="${GNRL}"
+        fi
+        MRGD="${VGPU}-merged"
         SOURCE="${MRGD}"
         TARGET="${MRGD}-patched"
         ;;
@@ -280,7 +304,22 @@ blobpatch() {
 applypatch() {
     echo "applypatch ${2} ${3}"
     patch -d ${1} -p1 --no-backup-if-mismatch -f ${3} < "$BASEDIR/patches/${2}"
+    res=$?
     echo
+    return $res
+}
+
+applypatchx() {
+    applypatch ${1} ${2} ${3}
+    res=$?
+    #echo "applypatchx ${2} ${3}"
+    if patch -d ${1}/kernel-open -p2 --dry-run ${3} < "$BASEDIR/patches/${2}" &>/dev/null; then
+        patch -d ${1}/kernel-open -p2 --no-backup-if-mismatch ${3} < "$BASEDIR/patches/${2}" &>/dev/null
+    else
+        die "ERROR: patch ${2} NOT APPLIED to kernel-open!"
+    fi
+    #echo
+    return $res
 }
 
 libspatch() {
@@ -414,12 +453,17 @@ if $DO_MRGD; then
     $CP ${VGPU}/. ${SOURCE}
     rm ${SOURCE}/libnvidia-ml.so.${VER_VGPU}
     $CP ${GRID}/. ${SOURCE}
-    rm -rf ${SOURCE}/firmware
-    for i in LICENSE kernel/nvidia/nvidia-sources.Kbuild init-scripts/{post-install,pre-uninstall} nvidia-bug-report.sh kernel/nvidia/nv-kernel.o_binary firmware
+    if [ ${VER_BLOB} = ${VER_TARGET} ]; then
+        rm -rf ${SOURCE}/firmware
+        $CP -f ${VGPU}/firmware ${SOURCE}
+    fi
+    for i in LICENSE kernel{,-open}/nvidia/nvidia-sources.Kbuild init-scripts/{post-install,pre-uninstall} nvidia-bug-report.sh kernel/nvidia/nv-kernel.o_binary
     do
         $CP -f ${VGPU}/$i ${SOURCE}/$i
     done
-    sed -e '/^# VGX_KVM_BUILD/aVGX_KVM_BUILD=1' -i ${SOURCE}/kernel/conftest.sh
+    sed -e '/^# VGX_KVM_BUILD/aVGX_KVM_BUILD=1' -i ${SOURCE}/kernel{,-open}/conftest.sh
+    sed -e '/VERSION/ s/\\"[.0-9]\+\\"/\\"'${VER_TARGET}'\\"/' -i ${SOURCE}/kernel/Kbuild
+    sed -e '/VERSION/ s/\\"[.0-9]\+\\"/\\"'${VER_TARGET}'\\"/' -i ${SOURCE}/kernel-open/Kbuild
     sed -e 's/^\(nvidia .*nvidia-drm.*\)/\1 nvidia-vgpu-vfio/' -i ${SOURCE}/.manifest
     diff -u ${VGPU}/.manifest ${GRID}/.manifest \
     | grep -B 1 '^-.* MODULE:\(vgpu\|installer\)$' | grep -v '^--$' \
@@ -430,11 +474,46 @@ if $DO_MRGD; then
     sed -f manifest-merge.sed -i ${SOURCE}/.manifest
     rm manifest-merge.sed
     [ -e ${SOURCE}/nvidia-gridd ] && applypatch ${SOURCE} vgpu-kvm-merge-grid-scripts.patch
-    applypatch ${SOURCE} disable-nvidia-blob-version-check.patch
+    applypatchx ${SOURCE} disable-nvidia-blob-version-check.patch
 fi
 
 rm -rf ${TARGET}
 $CP ${SOURCE} ${TARGET}
+
+if $NVOSS; then
+    which gcc &>/dev/null || die "gcc is needed to compile nvidia kernel-open blobs"
+    VER_NVOSS=${VER_TARGET}
+    NVKMSRC="NVIDIA-kernel-module-source-${VER_NVOSS}"
+    [ -d ${NVKMSRC}-patched ] || {
+        [ -d ${NVKMSRC} ] || {
+            if [ -e ${NVKMSRC}.tar.xz ]; then
+                tar Jxf ${NVKMSRC}.tar.xz || die "failed to extract ${NVKMSRC}.tar.xz"
+            else
+                die "please download https://download.nvidia.com/XFree86/NVIDIA-kernel-module-source/${NVKMSRC}.tar.xz"
+            fi
+        }
+        $CP ${NVKMSRC} ${NVKMSRC}-patched
+        #( cd ${NVKMSRC}-patched; git init . && git add -f . && git commit -m "unpacked ${NVKMSRC}.tar.xz"; )
+        applypatch ${NVKMSRC} test-gsp-ver-mismatch.patch
+    }
+    NVKMSRC=${NVKMSRC}-patched
+    NVOPTS=""
+    if $DBGNVOSS; then
+        NVOPTS="DEBUG=1"
+    fi
+    echo "about to build nvidia module blobs from published sources, please wait..."
+    nv_kernel_o_binary="kernel-open/nvidia/nv-kernel.o_binary"
+    nv_modeset_kernel_o_binary="kernel-open/nvidia-modeset/nv-modeset-kernel.o_binary"
+    make -C ${NVKMSRC} ${NVOPT} -j$(nproc) ${nv_kernel_o_binary} ${nv_modeset_kernel_o_binary} &>/dev/null || die "build of nvoss failed!"
+    echo "replacing kernel-open nvidia module blobs with compiled ones..."
+    if [ -e ${TARGET}/${nv_kernel_o_binary} ]; then
+        $CP ${NVKMSRC}/${nv_kernel_o_binary} ${TARGET}/${nv_kernel_o_binary}
+    fi
+    if [ -e ${TARGET}/${nv_modeset_kernel_o_binary} ]; then
+        $CP ${NVKMSRC}/${nv_modeset_kernel_o_binary} ${TARGET}/${nv_modeset_kernel_o_binary}
+    fi
+    echo
+fi
 
 if $DO_WSYS; then
     which osslsigncode &>/dev/null || die "install osslsigncode (https://github.com/mtrojnar/osslsigncode)"
@@ -514,7 +593,8 @@ if [ -e patches/blob-${VER_BLOB}.diff ]; then
     blobpatch ${TARGET}/kernel/nvidia/nv-kernel.o_binary patches/blob-${VER_BLOB}.diff || exit 1
 fi
 applypatch ${TARGET} setup-vup-hooks.patch
-applypatch ${TARGET} filter-for-nvrm-logs.patch
+applypatchx ${TARGET} filter-for-nvrm-logs.patch
+[ -d ${TARGET}/kernel/nvidia-drm ] && applypatchx ${TARGET} test-kms-support.patch
 $NVGPLOPTPATCH && {
     applypatch ${TARGET} switch-option-to-gpl-for-debug.patch
     $FORCEUSENVGPL && sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DFORCE_GPL_FOR_EXPERIMENTING' -i ${TARGET}/kernel/nvidia/nvidia.Kbuild
@@ -523,15 +603,15 @@ $TDMABUFEXPORT && {
     cp -p ${TARGET}/kernel-open/nvidia/nv-dmabuf.c ${TARGET}/kernel/nvidia/nv-dmabuf.c
     applypatch ${TARGET} test-dmabuf-export.patch
 }
-$DO_VGPU && applypatch ${TARGET} vgpu-kvm-optional-vgpu-v2.patch
+$DO_VGPU && applypatchx ${TARGET} vgpu-kvm-optional-vgpu-v2.patch
 
 $DO_MRGD && {
-    sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DVUP_MERGED_DRIVER=1' -i ${TARGET}/kernel/nvidia/nvidia.Kbuild
-    blobpatch ${TARGET}/libnvidia-ml.so.${VER_TARGET} "$BASEDIR/patches/libnvidia-ml.so.${VER_TARGET%.*}.diff" || exit 1
+    sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DVUP_MERGED_DRIVER=1' -i ${TARGET}/kernel{,-open}/nvidia/nvidia.Kbuild
+    blobpatch ${TARGET}/libnvidia-ml.so.${VER_TARGET%.*}.* "$BASEDIR/patches/libnvidia-ml.so.${VER_TARGET%.*}.diff" || exit 1
 }
 
 $DO_LIBS && {
-    for i in nvidia_drv.so {.,32}/libnvidia-{,e}glcore.so.${VER_TARGET}
+    for i in nvidia_drv.so {.,32}/libnvidia-{,e}glcore.so.${VER_TARGET%.*}.*
     do
         libspatch ${TARGET}/${i}
     done
@@ -550,12 +630,12 @@ if $DO_VGPU; then
         }
         sed -e 's/\(enable_spoof_devid\)=./\1=1/' -i ${TARGET}/libvgpucompat.so
     fi
-    applypatch ${TARGET} vgpu-kvm-nvidia-535.54-compat.patch
-    applypatch ${TARGET} workaround-for-cards-with-inforom-error.patch
+    applypatchx ${TARGET} vgpu-kvm-nvidia-535.54-compat.patch
+    applypatchx ${TARGET} workaround-for-cards-with-inforom-error.patch
     applypatch ${TARGET} vcfg-v16mpp.patch
     applypatch ${TARGET} vcfg-v15vcs.patch
     applypatch ${TARGET} vcfg-testing.patch
-    applypatch ${TARGET} verbose-firmware-load.patch
+    applypatchx ${TARGET} verbose-firmware-load.patch
     vcfgclone ${TARGET}/vgpuConfig.xml 0x1E30 0x12BA 0x1E07 0x0000	# RTX 2080 Ti
     vcfgclone ${TARGET}/vgpuConfig.xml 0x1E30 0x12BA 0x1E84 0x0000	# RTX 2070 super 8GB
     vcfgclone ${TARGET}/vgpuConfig.xml 0x1E30 0x12BA 0x1E81 0x0000	# RTX 2080 super 8GB
@@ -578,9 +658,10 @@ if $DO_VGPU; then
 fi
 
 $ENVYPROBES && {
-    applypatch ${TARGET} envy_probes-ioctl-hooks-from-mbuchel.patch
-    sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DENVY_LINUX' -i ${TARGET}/kernel/nvidia/nvidia.Kbuild
+    applypatchx ${TARGET} envy_probes-ioctl-hooks-from-mbuchel.patch
+    sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DENVY_LINUX' -i ${TARGET}/kernel{,-open}/nvidia/nvidia.Kbuild
     echo 'NVIDIA_SOURCES += unlock/envy_probes.c' >> ${TARGET}/kernel/nvidia/nvidia-sources.Kbuild
+    echo 'NVIDIA_SOURCES += unlock/envy_probes.c' >> ${TARGET}/kernel-open/nvidia/nvidia-sources.Kbuild
     echo "kernel/common/inc/envy_probes.h 0644 KERNEL_MODULE_SRC INHERIT_PATH_DEPTH:1 MODULE:vgpu" >>${TARGET}/.manifest
     echo "kernel/unlock/envy_probes.c 0644 KERNEL_MODULE_SRC INHERIT_PATH_DEPTH:1 MODULE:vgpu" >>${TARGET}/.manifest
 }

@@ -50,15 +50,15 @@ diff --git a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c b/kernel/nvidia-vgpu-vfi
 index 045d7f1..a0dbf2c 100644
 --- a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c
 +++ b/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c
-@@ -48,6 +48,9 @@ NvBool is_driver_vm;
- static void vgpu_msix_disable(vgpu_dev_t *vgpu_dev);
- static int do_vf_flr(vgpu_dev_t *vgpu_dev);
+@@ -46,6 +46,9 @@ struct phys_devs phys_devices;
+ #if defined(NV_VGPU_KVM_BUILD)
+ NvBool is_driver_vm;
  
 +int nv_vgpu_kvm_enable = 1;
 +module_param_named(vgpukvm, nv_vgpu_kvm_enable, int, 0400);
 +
- NV_STATUS (*get_ops) (rm_vgpu_vfio_ops_t *);
- NV_STATUS (*set_ops) (vgpu_vfio_ops_t *);
+ static void vgpu_msix_disable(vgpu_dev_t *vgpu_dev);
+ static int do_vf_flr(vgpu_dev_t *vgpu_dev);
  
 @@ -4873,6 +4875,9 @@ static NV_STATUS nv_vgpu_probe(struct pci_dev *pdev, NvU32 num_vgpu_types, NvU32
      char *vgpu_type_name = NULL;
