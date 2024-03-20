@@ -1,0 +1,13 @@
+diff --git a/src/nvidia/src/kernel/gpu/gsp/kernel_gsp.c b/src/nvidia/src/kernel/gpu/gsp/kernel_gsp.c
+index 1478394..5c334d2 100644
+--- a/src/nvidia/src/kernel/gpu/gsp/kernel_gsp.c
++++ b/src/nvidia/src/kernel/gpu/gsp/kernel_gsp.c
+@@ -3630,7 +3630,7 @@ _kgspFwContainerVerifyVersion
+             NV_PRINTF(LEVEL_ERROR, "%s version unknown or malformed, expected version %s\n",
+                       pNameInMsg, NV_VERSION_STRING);
+         }
+-        return NV_ERR_INVALID_DATA;
++        return NV_OK; //NV_ERR_INVALID_DATA;
+     }
+ 
+     return NV_OK;
