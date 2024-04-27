@@ -519,13 +519,17 @@ int ioctl(int fd, int request, void *data)
     if ((0x13c0 <= actual_devid && actual_devid <= 0x1436) ||
       (0x1617 <= actual_devid && actual_devid <= 0x1667) ||
       (0x17c2 <= actual_devid && actual_devid <= 0x17fd)) {
-      spoofed_devid = 0x13f2; // Tesla M60
+//      spoofed_devid = 0x13f2; // Tesla M60
+        spoofed_devid = 0x2233; // A5500
+        spoofed_subsysid = 0x165a;
     }
     // Pascal
     if ((0x15f0 <= actual_devid && actual_devid <= 0x15f1) ||
       (0x1b00 <= actual_devid && actual_devid <= 0x1d56) ||
       (0x1725 <= actual_devid && actual_devid <= 0x172f)) {
-      spoofed_devid = 0x1b38; // Tesla P40
+//      spoofed_devid = 0x1b38; // Tesla P40
+        spoofed_devid = 0x2233; // A5500
+        spoofed_subsysid = 0x165a;
     }
     // GV100 Volta
     if (actual_devid == 0x1d81 || // TITAN V
