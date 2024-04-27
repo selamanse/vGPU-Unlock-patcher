@@ -462,7 +462,7 @@ if $DO_MRGD; then
         $CP -f ${VGPU}/$i ${SOURCE}/$i
     done
     sed -e '/^# VGX_KVM_BUILD/aVGX_KVM_BUILD=1' -i ${SOURCE}/kernel{,-open}/conftest.sh
-    sed -e '/VERSION/ s/\\"[.0-9]\+\\"/\\"'${VER_BLOB}'\\"/' -i ${SOURCE}/kernel/Kbuild
+    sed -e '/VERSION/ s/\\"[.0-9]\+\\"/\\"'${VER_TARGET}'\\"/' -i ${SOURCE}/kernel/Kbuild
     sed -e '/VERSION/ s/\\"[.0-9]\+\\"/\\"'${VER_TARGET}'\\"/' -i ${SOURCE}/kernel-open/Kbuild
     sed -e 's/^\(nvidia .*nvidia-drm.*\)/\1 nvidia-vgpu-vfio/' -i ${SOURCE}/.manifest
     diff -u ${VGPU}/.manifest ${GRID}/.manifest \
