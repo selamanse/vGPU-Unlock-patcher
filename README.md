@@ -58,7 +58,7 @@ This repository contains a submodule, so please clone this project recursively, 
 
 4. Change directory into the output folder (ending with `-patched`) to install the patched driver:
       ```shell
-      ./nvidia-installer --dkms
+      ./nvidia-installer --dkms -m kernel
       ```
    If you have installed the driver before, the command above might fail, with the error log mentioning some services are still running. In that case, manually stop then with `systemctl stop nvidia*.service` and try again.
 
