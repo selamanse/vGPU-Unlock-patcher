@@ -594,7 +594,7 @@ if [ -e patches/blob-${VER_BLOB}.diff ]; then
 fi
 applypatch ${TARGET} setup-vup-hooks.patch
 applypatchx ${TARGET} filter-for-nvrm-logs.patch
-applypatchx ${TARGET} test-kms-support.patch
+$DO_GRID && applypatchx ${TARGET} test-kms-support.patch
 $NVGPLOPTPATCH && {
     applypatch ${TARGET} switch-option-to-gpl-for-debug.patch
     $FORCEUSENVGPL && sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DFORCE_GPL_FOR_EXPERIMENTING' -i ${TARGET}/kernel/nvidia/nvidia.Kbuild
