@@ -616,8 +616,7 @@ $TDMABUFEXPORT && {
     applypatch ${TARGET} test-dmabuf-export.patch
 }
 $DO_VGPU && applypatchx ${TARGET} vgpu-kvm-optional-vgpu-v2.patch
-$DO_VGPU && !$DO_MRGD && blobpatch ${TARGET}/nvidia-installer patches/nvidia-installer-550.54.10.diff
-$DO_VGPU && $DO_MRGD && blobpatch ${TARGET}/nvidia-installer patches/nvidia-installer-550.54.16.diff
+$DO_VGPU && sed -e 's/is_vgpu_host_package/_s_vgpu_host_package/g'  -i ${TARGET}/nvidia-installer
 
 $DO_MRGD && {
     sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DVUP_MERGED_DRIVER=1' -i ${TARGET}/kernel{,-open}/nvidia/nvidia.Kbuild
