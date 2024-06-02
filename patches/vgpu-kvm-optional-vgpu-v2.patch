@@ -60,6 +60,30 @@ index 045d7f1..a0dbf2c 100644
  NV_STATUS (*get_ops) (rm_vgpu_vfio_ops_t *);
  NV_STATUS (*set_ops) (vgpu_vfio_ops_t *);
  
+@@ -2870,7 +2870,11 @@ static irqreturn_t vgpu_msix_handler(int irq, void *arg)
+     }
+
+     if (trigger != NULL)
++    #if LINUX_VERSION_CODE >= KERNEL_VERSION(6,8,0)
++        eventfd_signal(trigger);
++    #else
+         eventfd_signal(trigger, 1);
++    #endif
+     else
+         return IRQ_NONE;
+
+@@ -3183,7 +3187,11 @@ NV_STATUS nv_vgpu_inject_interrupt(void *vgpuRef)
+     }
+     NV_SPIN_UNLOCK_IRQRESTORE(&vgpu_dev->intr_info_lock, eflags);
+
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,8,0)
++    eventfd_signal(trigger);
++#else
+     eventfd_signal(trigger, 1);
++#endif
+
+     return status;
+ }
 @@ -4873,6 +4875,9 @@ static NV_STATUS nv_vgpu_probe(struct pci_dev *pdev, NvU32 num_vgpu_types, NvU32
      char *vgpu_type_name = NULL;
      phys_dev_t *phys_dev = NULL;
@@ -100,6 +124,46 @@ index 045d7f1..a0dbf2c 100644
      list_for_each_entry_safe(phys_dev, tmpdev, &phys_devices.phys_dev_list, next)
      {
          mdev_unregister_device(&phys_dev->dev->dev);
+@@ -5511,6 +5519,11 @@ module_exit(nv_vgpu_vfio_exit);
+ MODULE_LICENSE("Dual MIT/GPL");
+ MODULE_INFO(supported, "external");
+ MODULE_VERSION(NV_VERSION_STRING);
++
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,8,0)
++MODULE_IMPORT_NS(IOMMUFD);
++#endif
++
+ #if defined(NV_VGPU_KVM_BUILD)
+ MODULE_SOFTDEP("pre: nvidia");
+ #endif
+diff --git ./kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c ./kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c
+index 9f6c1e8..b6f0a92 100644
+--- ./kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c
++++ ./kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c
+@@ -548,6 +548,9 @@ static const struct vfio_device_ops nv_vfio_mdev_dev_ops = {
+     .bind_iommufd   = vfio_iommufd_emulated_bind,
+     .unbind_iommufd = vfio_iommufd_emulated_unbind,
+     .attach_ioas    = vfio_iommufd_emulated_attach_ioas,
++    #if LINUX_VERSION_CODE >= KERNEL_VERSION(6,8,0)
++    .detach_ioas = vfio_iommufd_physical_detach_ioas,
++    #endif
+ #endif
+ };
+
+diff --git ./kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c ./kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c
+index ff76a64..31f2e90 100644
+--- ./kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c
++++ ./kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c
+@@ -524,6 +524,9 @@ static const struct vfio_device_ops nv_vfio_pci_ops = {
+     .bind_iommufd = vfio_iommufd_physical_bind,
+     .unbind_iommufd = vfio_iommufd_physical_unbind,
+     .attach_ioas = vfio_iommufd_physical_attach_ioas,
++    #if LINUX_VERSION_CODE >= KERNEL_VERSION(6,8,0)
++    .detach_ioas = vfio_iommufd_physical_detach_ioas,
++    #endif
+ #endif
+ };
+
 diff --git a/kernel/nvidia/nv-frontend.c b/kernel/nvidia/nv-frontend.c
 index 52b2b87..7e861f4 100644
 --- a/kernel/nvidia/nv-frontend.c
@@ -139,6 +203,18 @@ index da01e46..140d53d 100644
          {
              ret = nv_remap_page_range(vma, start, at->page_table[j]->phys_addr,
                                        PAGE_SIZE, vma->vm_page_prot);
+diff --git ./kernel/common/inc/nv-pci.h ./kernel/common/inc/nv-pci.h
+index 2254e72..c92c968 100644
+--- ./kernel/common/inc/nv-pci.h
++++ ./kernel/common/inc/nv-pci.h
+@@ -26,6 +26,7 @@
+
+ #include <linux/pci.h>
+ #include "nv-linux.h"
++#include <linux/iommu.h>
+
+ #define NV_GPU_BAR1 1
+ #define NV_GPU_BAR3 3
 diff --git a/kernel/nvidia/nv-pci.c b/kernel/nvidia/nv-pci.c
 index 311d9fd..e3f45dd 100644
 --- a/kernel/nvidia/nv-pci.c
@@ -151,6 +227,24 @@ index 311d9fd..e3f45dd 100644
          nvl = pci_get_drvdata(pci_dev->physfn);
          if (!nvl)
          {
+@@ -211,7 +212,16 @@
+             goto failed;
+         }
+ 
+-        if (pci_dev->dev.bus->iommu_ops == NULL) 
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,8,0)
++        const struct iommu_ops *ops = NULL;
++        struct iommu_fwspec *fwspec = NULL;
++        fwspec = dev_iommu_fwspec_get(&pci_dev->dev);
++        if (fwspec && fwspec->ops)
++        {ops = fwspec->ops;}
++        if (ops == NULL)
++#else
++        if (pci_dev->dev.bus->iommu_ops == NULL)
++#endif
+         {
+             nv = NV_STATE_PTR(nvl);
+             if (rm_is_iommu_needed_for_sriov(sp, nv))
 @@ -218,13 +219,15 @@ nv_pci_probe
  
          nv_kmem_cache_free_stack(sp);
