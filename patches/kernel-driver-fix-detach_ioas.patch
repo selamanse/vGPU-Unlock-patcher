@@ -1,0 +1,84 @@
+kernel driver fix - detach_ioas
+
+setup detach_ioas callback if present in vfio_device_ops
+
+cherry picked from https://github.com/NVIDIA/open-gpu-kernel-modules
+550.40.07 tag
+---
+ kernel/conftest.sh                              | 17 +++++++++++++++++
+ kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild |  1 +
+ kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c        |  3 +++
+ kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c    |  3 +++
+ 4 files changed, 24 insertions(+)
+
+diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+index 198f1a4..42febdc 100755
+--- a/kernel/conftest.sh
++++ b/kernel/conftest.sh
+@@ -1209,6 +1209,23 @@ compile_test() {
+             compile_check_conftest "$CODE" "NV_VFIO_DEVICE_OPS_HAS_BIND_IOMMUFD" "" "types"
+         ;;
+ 
++        vfio_device_ops_has_detach_ioas)
++            #
++            # Determine if 'vfio_device_ops' struct has 'detach_ioas' field.
++            #
++            # Added by commit 9048c7341c4df9cae04c154a8b0f556dbe913358 ("vfio-iommufd: Add detach_ioas
++            # support for physical VFIO devices
++            #
++            CODE="
++            #include <linux/pci.h>
++            #include <linux/vfio.h>
++            int conftest_vfio_device_ops_has_detach_ioas(void) {
++                return offsetof(struct vfio_device_ops, detach_ioas);
++            }"
++
++            compile_check_conftest "$CODE" "NV_VFIO_DEVICE_OPS_HAS_DETACH_IOAS" "" "types"
++        ;;
++
+         pci_irq_vector_helpers)
+             #
+             # Determine if pci_alloc_irq_vectors(), pci_free_irq_vectors()
+diff --git a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild b/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild
+index 5439eaa..17d55e0 100644
+--- a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild
++++ b/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild
+@@ -75,6 +75,7 @@ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_migration_ops
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += mdev_driver_has_supported_type_groups
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_device_ops_has_dma_unmap
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_device_ops_has_bind_iommufd
++NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_device_ops_has_detach_ioas
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vm_area_struct_has_const_vm_flags
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_migration_ops_has_migration_get_data_size
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_log_ops
+diff --git a/kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c b/kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c
+index 9f6c1e8..89836ab 100644
+--- a/kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c
++++ b/kernel/nvidia-vgpu-vfio/vgpu-vfio-mdev.c
+@@ -549,6 +549,9 @@ static const struct vfio_device_ops nv_vfio_mdev_dev_ops = {
+     .unbind_iommufd = vfio_iommufd_emulated_unbind,
+     .attach_ioas    = vfio_iommufd_emulated_attach_ioas,
+ #endif
++#if defined(NV_VFIO_DEVICE_OPS_HAS_DETACH_IOAS)
++    .detach_ioas    = vfio_iommufd_emulated_detach_ioas,
++#endif
+ };
+ 
+ void nv_vfio_mdev_set_mig_ops(struct vfio_device *core_vdev, struct pci_dev *pdev)
+diff --git a/kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c b/kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c
+index ff76a64..b7c782f 100644
+--- a/kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c
++++ b/kernel/nvidia-vgpu-vfio/vgpu-vfio-pci-core.c
+@@ -525,6 +525,9 @@ static const struct vfio_device_ops nv_vfio_pci_ops = {
+     .unbind_iommufd = vfio_iommufd_physical_unbind,
+     .attach_ioas = vfio_iommufd_physical_attach_ioas,
+ #endif
++#if defined(NV_VFIO_DEVICE_OPS_HAS_DETACH_IOAS)
++    .detach_ioas = vfio_iommufd_physical_detach_ioas,
++#endif
+ };
+ 
+ NV_STATUS nv_vfio_pci_core_probe(phys_dev_t **p_phys_dev, struct pci_dev *pdev)
+-- 
+2.43.2
+
