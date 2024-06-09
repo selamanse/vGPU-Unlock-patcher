@@ -1,0 +1,151 @@
+kernel driver fix - eventfd_signal and iommu_ops
+
+cherry picked from https://github.com/NVIDIA/open-gpu-kernel-modules
+535.179 tag
+---
+ kernel/conftest.sh                            | 36 +++++++++++++++++++
+ .../nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild  |  1 +
+ kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c    | 13 +++++++
+ kernel/nvidia/nv-pci.c                        |  9 +++++
+ kernel/nvidia/nvidia.Kbuild                   |  1 +
+ 5 files changed, 60 insertions(+)
+
+diff --git a/kernel/conftest.sh b/kernel/conftest.sh
+index 42febdc..39f65fe 100755
+--- a/kernel/conftest.sh
++++ b/kernel/conftest.sh
+@@ -1372,6 +1372,42 @@ compile_test() {
+             compile_check_conftest "$CODE" "NV_VFIO_REGISTER_EMULATED_IOMMU_DEV_PRESENT" "" "functions"
+         ;;
+ 
++        bus_type_has_iommu_ops)
++            #
++            # Determine if 'bus_type' structure has a 'iommu_ops' field.
++            #
++            # This field was removed by commit 17de3f5fdd35 (iommu: Retire bus ops)
++            # in v6.8
++            #
++            CODE="
++            #include <linux/device.h>
++
++            int conftest_bus_type_has_iommu_ops(void) {
++                return offsetof(struct bus_type, iommu_ops);
++            }"
++
++            compile_check_conftest "$CODE" "NV_BUS_TYPE_HAS_IOMMU_OPS" "" "types"
++        ;;
++
++        eventfd_signal_has_counter_arg)
++            #
++            # Determine if eventfd_signal() function has an additional 'counter' argument.
++            #
++            # This argument was removed by commit 3652117f8548 (eventfd: simplify
++            # eventfd_signal()) in v6.8
++            #
++            CODE="
++            #include <linux/eventfd.h>
++
++            void conftest_eventfd_signal_has_counter_arg(void) {
++                struct eventfd_ctx *ctx;
++
++                eventfd_signal(ctx, 1);
++            }"
++
++            compile_check_conftest "$CODE" "NV_EVENTFD_SIGNAL_HAS_COUNTER_ARG" "" "types"
++        ;;
++
+         drm_available)
+             # Determine if the DRM subsystem is usable
+             CODE="
+diff --git a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild b/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild
+index 17d55e0..1d9d920 100644
+--- a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild
++++ b/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.Kbuild
+@@ -80,3 +80,4 @@ NV_CONFTEST_TYPE_COMPILE_TESTS     += vm_area_struct_has_const_vm_flags
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_migration_ops_has_migration_get_data_size
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_log_ops
+ NV_CONFTEST_TYPE_COMPILE_TESTS     += vfio_precopy_info
++NV_CONFTEST_TYPE_COMPILE_TESTS     += eventfd_signal_has_counter_arg
+diff --git a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c b/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c
+index 4699d52..0b09c6d 100644
+--- a/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c
++++ b/kernel/nvidia-vgpu-vfio/nvidia-vgpu-vfio.c
+@@ -2873,7 +2873,11 @@ static irqreturn_t vgpu_msix_handler(int irq, void *arg)
+     }
+ 
+     if (trigger != NULL)
++#if defined(NV_EVENTFD_SIGNAL_HAS_COUNTER_ARG)
+         eventfd_signal(trigger, 1);
++#else
++        eventfd_signal(trigger);
++#endif
+     else
+         return IRQ_NONE;
+ 
+@@ -3186,7 +3190,11 @@ NV_STATUS nv_vgpu_inject_interrupt(void *vgpuRef)
+     }
+     NV_SPIN_UNLOCK_IRQRESTORE(&vgpu_dev->intr_info_lock, eflags);
+ 
++#if defined(NV_EVENTFD_SIGNAL_HAS_COUNTER_ARG)
+     eventfd_signal(trigger, 1);
++#else
++    eventfd_signal(trigger);
++#endif
+ 
+     return status;
+ }
+@@ -5526,6 +5534,11 @@ module_exit(nv_vgpu_vfio_exit);
+ MODULE_LICENSE("Dual MIT/GPL");
+ MODULE_INFO(supported, "external");
+ MODULE_VERSION(NV_VERSION_STRING);
++
++#if defined(MODULE_IMPORT_NS)
++MODULE_IMPORT_NS(IOMMUFD);
++#endif
++
+ #if defined(NV_VGPU_KVM_BUILD)
+ MODULE_SOFTDEP("pre: nvidia");
+ #endif
+diff --git a/kernel/nvidia/nv-pci.c b/kernel/nvidia/nv-pci.c
+index 326833e..4ffd3a7 100644
+--- a/kernel/nvidia/nv-pci.c
++++ b/kernel/nvidia/nv-pci.c
+@@ -38,6 +38,10 @@
+ #include <linux/kernfs.h>
+ #endif
+ 
++#if !defined(NV_BUS_TYPE_HAS_IOMMU_OPS)
++#include <linux/iommu.h>
++#endif
++
+ static void
+ nv_check_and_exclude_gpu(
+     nvidia_stack_t *sp,
+@@ -212,7 +216,12 @@ nv_pci_probe
+             goto failed;
+         }
+ 
++#if defined(NV_BUS_TYPE_HAS_IOMMU_OPS)
+         if (pci_dev->dev.bus->iommu_ops == NULL) 
++#else
++        if ((pci_dev->dev.iommu != NULL) && (pci_dev->dev.iommu->iommu_dev != NULL) &&
++            (pci_dev->dev.iommu->iommu_dev->ops == NULL))
++#endif
+         {
+             nv = NV_STATE_PTR(nvl);
+             if (rm_is_iommu_needed_for_sriov(sp, nv))
+diff --git a/kernel/nvidia/nvidia.Kbuild b/kernel/nvidia/nvidia.Kbuild
+index e9040b1..e48d430 100644
+--- a/kernel/nvidia/nvidia.Kbuild
++++ b/kernel/nvidia/nvidia.Kbuild
+@@ -252,6 +252,7 @@ NV_CONFTEST_TYPE_COMPILE_TESTS += num_registered_fb
+ NV_CONFTEST_TYPE_COMPILE_TESTS += pci_driver_has_driver_managed_dma
+ NV_CONFTEST_TYPE_COMPILE_TESTS += vm_area_struct_has_const_vm_flags
+ NV_CONFTEST_TYPE_COMPILE_TESTS += memory_failure_has_trapno_arg
++NV_CONFTEST_TYPE_COMPILE_TESTS += bus_type_has_iommu_ops
+ 
+ NV_CONFTEST_GENERIC_COMPILE_TESTS += dom0_kernel_present
+ NV_CONFTEST_GENERIC_COMPILE_TESTS += nvidia_vgpu_kvm_build
+-- 
+2.43.2
+
