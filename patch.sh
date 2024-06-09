@@ -660,6 +660,8 @@ if $DO_VGPU; then
     echo
 fi
 
+applypatch ${TARGET} kernel-driver-fix-drm_gem_object_vmap.patch
+
 $ENVYPROBES && {
     applypatchx ${TARGET} envy_probes-ioctl-hooks-from-mbuchel.patch
     sed -e '/^NVIDIA_CFLAGS += .*BIT_MACROS$/aNVIDIA_CFLAGS += -DENVY_LINUX' -i ${TARGET}/kernel{,-open}/nvidia/nvidia.Kbuild
