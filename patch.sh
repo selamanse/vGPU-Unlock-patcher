@@ -121,6 +121,7 @@ done
 case "$1" in
     vgpu*)
         DO_VGPU=true
+        DO_UNLK=false
         SOURCE="${VGPU}"
         TARGET="${VGPU}-patched"
         DO_LIBS=false
